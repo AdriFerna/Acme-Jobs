@@ -1,0 +1,19 @@
+#sponsor.commercialBanner.list #################################################################
+sponsor.commercialBanner.list.label.slogan = Slogan
+sponsor.commercialBanner.list.label.imageurl = Image URL
+
+#sponsor.commercialBanner.form #################################################################
+sponsor.commercialBanner.form.label.slogan = Slogan
+sponsor.commercialBanner.form.label.imageurl = Image URL
+sponsor.commercialBanner.form.label.targeturl = Target URL
+sponsor.commercialBanner.form.label.cardNumber = Number of the credit card
+sponsor.commercialBanner.form.label.holder = Owner of the credit card
+sponsor.commercialBanner.form.label.cvv = CVV	
+sponsor.commercialBanner.form.label.brand = Brand
+sponsor.commercialBanner.form.label.expirationMonth = Expiration Month
+sponsor.commercialBanner.form.label.expirationYear = Expiration Year
+
+sponsor.commercialBanner.form.button.return = Return
+
+sponsor.commercialBanner.error.expiration = The expiration date is in the past
+sponsor.commercialBanner.error.cvv = CVV must have 3 digits

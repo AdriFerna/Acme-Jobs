@@ -1,0 +1,12 @@
+
+#sponsor.nonCommercialBanner.list #################################################################
+sponsor.nonCommercialBanner.list.label.slogan = Slogan
+sponsor.nonCommercialBanner.list.label.targeturl = Target URL
+
+#sponsor.nonCommercialBanner.form #################################################################
+sponsor.nonCommercialBanner.form.label.slogan = Slogan
+sponsor.nonCommercialBanner.form.label.imageurl = Image URL
+sponsor.nonCommercialBanner.form.label.targeturl = Target URL
+sponsor.nonCommercialBanner.form.label.jingleurl = Jingle URL
+
+sponsor.nonCommercialBanner.form.button.return = Return

@@ -1,0 +1,12 @@
+authenticated.audit-record.list.label.title = Title
+authenticated.audit-record.list.label.body = Body
+authenticated.audit-record.list.label.auditor.firm = Auditor Firm
+
+authenticated.audit-record.form.label.title = Title
+authenticated.audit-record.form.label.moment = Creation Moment
+authenticated.audit-record.form.label.body = Body
+authenticated.audit-record.form.label.auditor.firm = Auditor Firm
+authenticated.audit-record.form.label.job.referenceNumber = Reference Number Of The Job
+authenticated.audit-record.form.label.job.title = Title Of The Job 
+
+authenticated.audit-record.form.label.return = Return

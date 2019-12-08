@@ -1,0 +1,13 @@
+employer.jobApplication.list.label.referenceNumber = Numero de referencia
+employer.jobApplication.list.label.qualifications = Titulos
+employer.jobApplication.list.label.jobTitle = Titulo del trabajo
+
+employer.jobApplication.form.label.referenceNumber = Numero de referencia
+employer.jobApplication.form.label.creationMoment = Momento de creacion
+employer.jobApplication.form.label.status = Estado
+employer.jobApplication.form.label.statement = Declaracion
+employer.jobApplication.form.label.skills = Habilidades
+employer.jobApplication.form.label.qualifications = Titulos
+employer.job.message.job = Ver el trabajo solicitado
+
+autheticated.jobApplication.form.button.return = Volver

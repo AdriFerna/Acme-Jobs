@@ -1,0 +1,14 @@
+autheticated.message.list.label.title = Title
+autheticated.message.list.label.tags = Tags
+autheticated.message.list.label.username = Username
+
+autheticated.message.form.label.title = Title
+autheticated.message.form.label.creationMoment = Creation Moment
+autheticated.message.form.label.body = Body
+autheticated.message.form.label.tags = Tags
+autheticated.message.form.label.user = User
+autheticated.message.form.button.return = Return
+
+autheticated.message.form.label.user.userAccount.username = Username of the creator
+autheticated.message.form.label.user.userAccount.identity.name = Name of the creator
+autheticated.message.form.label.user.userAccount.identity.surname = Surname of the creator

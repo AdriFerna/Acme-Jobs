@@ -1,0 +1,19 @@
+#sponsor.commercialBanner.list #################################################################
+sponsor.commercialBanner.list.label.slogan = Eslogan
+sponsor.commercialBanner.list.label.imageurl = URL Imagen 
+
+#sponsor.commercialBanner.form #################################################################
+sponsor.commercialBanner.form.label.slogan = Eslogan
+sponsor.commercialBanner.form.label.imageurl = URL Imagen
+sponsor.commercialBanner.form.label.targeturl = URL Destino
+sponsor.commercialBanner.form.label.cardNumber = Número de la tarjeta de crédito
+sponsor.commercialBanner.form.label.holder = Dueño de la tarjeta de crédito
+sponsor.commercialBanner.form.label.cvv = CVV	
+sponsor.commercialBanner.form.label.brand = Marca
+sponsor.commercialBanner.form.label.expirationMonth = Mes de caducidad
+sponsor.commercialBanner.form.label.expirationYear = Año de caducidad
+
+sponsor.commercialBanner.form.button.return = Volver
+
+sponsor.commercialBanner.error.expiration = La fecha de expiración está en el pasado
+sponsor.commercialBanner.error.cvv = El CVV tiene que tener 3 dígitos obligatoriamente

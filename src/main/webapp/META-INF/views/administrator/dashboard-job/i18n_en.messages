@@ -1,0 +1,6 @@
+administrator.dashboard.legend.avgJobsEmployer = Average Jobs Per Employer
+administrator.dashboard.legend.avgAppsEmployer = Average Applications Per Employer
+administrator.dashboard.legend.avgAppsWorker = Average Applications Per Worker
+
+administrator.dashboard.chart.jobsPerStatus = Ratio Of Jobs Per Status
+administrator.dashboard.chart.appsPerStatus = Ratio Of Applications Per Status

@@ -1,0 +1,14 @@
+auditor.job.list.label.referenceNumber = Nº de referencia
+auditor.job.list.label.title = Título
+auditor.job.list.label.salary = Salario
+
+auditor.job.form.label.referenceNumber = Nº de referencia
+auditor.job.form.label.status = Estado
+auditor.job.form.label.title = Título
+auditor.job.form.label.deadline = Fecha límite
+auditor.job.form.label.salary = Salario
+auditor.job.form.label.moreInfo = Más Info.
+auditor.job.form.label.description = Descripción
+auditor.job.form.button.return = Volver
+
+employer.job.message.audit-record = Ver los registros de auditoría del trabajo

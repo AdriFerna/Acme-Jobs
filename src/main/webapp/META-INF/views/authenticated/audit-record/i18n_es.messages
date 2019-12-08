@@ -1,0 +1,11 @@
+authenticated.audit-record.list.label.title = Título
+authenticated.audit-record.list.label.body = Cuerpo
+authenticated.audit-record.list.label.auditor.firm = Firma del Auditor
+
+authenticated.audit-record.form.label.title = Título
+authenticated.audit-record.form.label.moment = Momento de Creación
+authenticated.audit-record.form.label.body = Cuerpo
+authenticated.audit-record.form.label.auditor.firm = Firma del Auditor
+authenticated.audit-record.form.label.job.referenceNumber = Número de referencia del trabajo
+authenticated.audit-record.form.label.job.title = Título del trabajo
+authenticated.audit-record.form.label.return = Volver

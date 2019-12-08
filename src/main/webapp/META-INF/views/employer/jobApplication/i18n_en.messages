@@ -1,0 +1,14 @@
+employer.jobApplication.list.label.referenceNumber = Reference Number
+employer.jobApplication.list.label.qualifications = Qualifications
+employer.jobApplication.list.label.jobTitle = Job Title
+
+employer.jobApplication.form.label.referenceNumber = Reference Number
+employer.jobApplication.form.label.creationMoment = Moment of creation
+employer.jobApplication.form.label.status = Status
+employer.jobApplication.form.label.statement = Statement
+employer.jobApplication.form.label.skills = Skills
+employer.jobApplication.form.label.qualifications = Qualifications
+employer.job.message.job = See The Job Applied
+
+
+autheticated.jobApplication.form.button.return = Return

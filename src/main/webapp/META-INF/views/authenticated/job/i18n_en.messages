@@ -1,0 +1,15 @@
+autheticated.job.list.label.referenceNumber = Reference Number
+autheticated.job.list.label.title = Title
+autheticated.job.list.label.salary = Salary
+
+autheticated.job.form.label.referenceNumber = Reference Number
+autheticated.job.form.label.status = Status
+autheticated.job.form.label.title = Title
+autheticated.job.form.label.deadline = Deadline
+autheticated.job.form.label.salary = Salary
+autheticated.job.form.label.moreInfo = More Info
+autheticated.job.form.label.description = Description
+autheticated.job.form.button.return = Return
+
+authenticated.job.message.duties = See the Duties of the Job
+authenticated.job.message.audit-record = See the Audit Records of the Job

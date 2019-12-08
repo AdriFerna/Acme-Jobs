@@ -1,0 +1,9 @@
+autheticated.messagethread.list.label.title = Title
+autheticated.messagethread.list.label.creationMoment = Creation Moment
+
+authenticated.messagethread.message.users = Users in the Thread ((Username) | Name, Surname)
+authenticated.message.message.message  = Show the messages of the Thread
+autheticated.messagethread.form.label.title = Title
+autheticated.messagethread.form.label.creationMoment = Creation Moment
+#autheticated.messagethread.form.label.users = Users
+autheticated.messagethread.form.button.return = Return

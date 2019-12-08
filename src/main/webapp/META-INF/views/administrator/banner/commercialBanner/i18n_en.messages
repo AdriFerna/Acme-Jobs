@@ -1,0 +1,23 @@
+
+#administrator.commercialBanner.list #################################################################
+administrator.commercialBanner.list.label.slogan = Slogan
+administrator.commercialBanner.list.label.imageurl = Image URL
+
+#administrator.commercialBanner.form #################################################################
+administrator.commercialBanner.form.label.slogan = Slogan
+administrator.commercialBanner.form.label.imageurl = Image URL
+administrator.commercialBanner.form.label.targeturl = Target URL
+administrator.commercialBanner.form.label.cardNumber = Number of the credit card
+administrator.commercialBanner.form.label.holder = Owner of the credit card
+administrator.commercialBanner.form.label.cvv = CVV	
+administrator.commercialBanner.form.label.brand = Brand
+administrator.commercialBanner.form.label.expirationMonth = Expiration Month
+administrator.commercialBanner.form.label.expirationYear = Expiration Year
+	
+administrator.commercialBanner.form.button.create = Create
+administrator.commercialBanner.form.button.update = Update
+administrator.commercialBanner.form.button.delete = Delete
+administrator.commercialBanner.form.button.return = Return
+
+administrator.commercialBanner.error.expiration = The expiration date is in the past
+administrator.commercialBanner.error.cvv = CVV must have 3 digits

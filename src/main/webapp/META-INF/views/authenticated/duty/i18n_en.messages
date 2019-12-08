@@ -1,0 +1,7 @@
+authenticated.duty.list.label.title = Title 
+authenticated.duty.list.label.description = Description
+authenticated.duty.list.label.percentage = Percentage of work per week
+authenticated.duty.list.label.job.title = Title of the Job
+authenticated.duty.form.button.return = Return
+
+authenticated.duty.message.job = Duties' Job

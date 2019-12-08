@@ -1,0 +1,15 @@
+employer.job.list.label.referenceNumber = Nº de referencia
+employer.job.list.label.title = Título
+employer.job.list.label.salary = Salario
+
+employer.job.form.label.referenceNumber = Nº de referencia
+employer.job.form.label.status = Estado
+employer.job.form.label.title = Título
+employer.job.form.label.deadline = Fecha límite
+employer.job.form.label.salary = Salario
+employer.job.form.label.moreInfo = Más Info.
+employer.job.form.label.description = Descripción
+employer.job.form.button.return = Volver
+
+employer.job.message.duties = Ver las responsabilidades del Trabajo
+employer.job.message.audit-record = Ver los registros de auditoría del trabajo

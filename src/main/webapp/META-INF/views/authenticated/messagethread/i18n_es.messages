@@ -1,0 +1,10 @@
+autheticated.messagethread.list.label.title = Titulo
+autheticated.messagethread.list.label.creationMoment = Momento de Creación
+
+authenticated.messagethread.message.users = Usuarios en el hilo ((Nombre de Usuario) | Nombre, Apellidos)
+authenticated.message.message.message = Ver los mensajes del hilo
+
+autheticated.messagethread.form.label.title = Titulo
+autheticated.messagethread.form.label.creationMoment = Momento de Creación
+#autheticated.messagethread.form.label.users = Usuarios
+autheticated.messagethread.form.button.return = Volver

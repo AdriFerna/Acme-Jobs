@@ -1,0 +1,6 @@
+administrator.dashboard.legend.avgJobsEmployer = Media de Trabajos Por Empleador
+administrator.dashboard.legend.avgAppsEmployer = Media de Aplicaciones Por Empleador
+administrator.dashboard.legend.avgAppsWorker = Media de Aplicaciones Por Trabajador
+
+administrator.dashboard.chart.jobsPerStatus = Proporción de Trabajos Por Estado
+administrator.dashboard.chart.appsPerStatus = Proporción de Aplicaciones Por Estado
