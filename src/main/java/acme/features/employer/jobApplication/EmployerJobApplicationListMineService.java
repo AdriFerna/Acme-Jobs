@@ -1,7 +1,6 @@
 
 package acme.features.employer.jobApplication;
 
-import java.util.Arrays;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,8 +41,7 @@ public class EmployerJobApplicationListMineService implements AbstractListServic
 		Collection<JobApplication> res;
 		Principal principal;
 		principal = request.getPrincipal();
-		Integer[] id = this.repository.findManyId(principal.getActiveRoleId());
-		res = this.repository.findManyMine(Arrays.asList(id));
+		res = this.repository.findManyMine(principal.getActiveRoleId());
 		return res;
 	}
 
