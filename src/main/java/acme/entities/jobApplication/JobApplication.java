@@ -54,6 +54,9 @@ public class JobApplication extends DomainEntity {
 	@Column(length = 1024)
 	private String				qualifications;
 
+	@Column(length = 1024)
+	private String				justification;
+
 	@NotNull
 	@ManyToOne(optional = false)
 	private Job					job;
