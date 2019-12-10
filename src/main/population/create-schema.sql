@@ -301,9 +301,12 @@ create index IDXnr284tes3x8hnd3h716tmb3fr on `challenge` (`deadline`);
        add constraint UK_tnxlqvs5k2qohd925u32ycgps unique (`credit_card_id`);
 create index IDX9pkce3d1y6w47wadap5s5xptc on `company_record` (`stars`);
 create index IDXk2t3uthe649ao1jllcuks0gv4 on `investor_record` (`stars`);
+create index IDXfdmpnr8o4phmk81sqsano16r on `job` (`deadline`);
+create index IDXal59yunywnkwi09ps7jxpr18c on `job` (`deadline`, `status`);
 
     alter table `job` 
        add constraint UK_bos0omdc9s5vykasqjhwaq65m unique (`reference_number`);
+create index IDX71m7fwbhckbwa0qnuf1jt8h1k on `job_application` (`status`);
 
     alter table `job_application` 
        add constraint UK_4n3tt315wwa2rf3bav14bdmg1 unique (`reference_number`);
