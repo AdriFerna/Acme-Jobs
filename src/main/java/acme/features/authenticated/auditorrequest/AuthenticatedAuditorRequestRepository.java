@@ -11,4 +11,5 @@ public interface AuthenticatedAuditorRequestRepository extends AbstractRepositor
 
 	@Query("select count(ur) from AuditorRequest ur where ur.userAccountId = ?1")
 	Integer findAuditorRequestByUserAccountId(int id);
+
 }
