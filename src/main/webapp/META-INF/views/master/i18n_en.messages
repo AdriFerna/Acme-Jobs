@@ -74,6 +74,7 @@ master.menu.administrator.adminDisplay = Admin Display
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.dashboardJob = Job Dashboard
 master.menu.administrator.customParams = Customisation Parameters
+master.menu.administrator.auditorRequest = List Auditor Requests
 
 
 # master.menu.anonymous.announcements #######################################################s
@@ -144,6 +145,14 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+
+master.menu.user-account.become-employer = Become a employer
+master.menu.user-account.employer = Employer data
+
+master.menu.user-account.become-worker = Become a worker
+master.menu.user-account.worker = Worker data
+
+master.menu.user-account.become-auditor = Request auditor Role
 
 # master.footer ###############################################################
 
