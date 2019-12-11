@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import acme.components.CustomCommand;
 import acme.entities.jobs.Duty;
 import acme.entities.roles.Employer;
 import acme.framework.components.BasicCommand;
@@ -17,12 +18,16 @@ import acme.framework.controllers.AbstractController;
 public class EmployerDutyController extends AbstractController<Employer, Duty> {
 
 	@Autowired
-	private EmployerDutyListService listService;
+	private EmployerDutyListService	listService;
+
+	@Autowired
+	private EmployerDutyAddService	addService;
 
 
 	@PostConstruct
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
+		super.addCustomCommand(CustomCommand.ADD, BasicCommand.CREATE, this.addService);
 	}
 
 }

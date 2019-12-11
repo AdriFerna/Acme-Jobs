@@ -10,6 +10,25 @@ employer.job.form.label.salary = Salary
 employer.job.form.label.moreInfo = More Info
 employer.job.form.label.description = Description
 employer.job.form.button.return = Return
+employer.job.form.button.create = Create
+
+employer.job.form.button.delete = Delete
+employer.job.form.button.update = Update
+employer.job.form.button.publish = Publish
+employer.duty.form.button.addDuty = Add Duty
 
 employer.job.message.duties = See the Duties of the Job
 employer.job.message.audit-record = See the Audit Records of the Job
+
+
+employer.job.error.salaryCurrency = The currency must be EUROS (€)
+employer.job.error.noNegSalary = The amount must be positive
+employer.job.error.deadline = Deadline must be in the future
+employer.job.error.referenceNumber = Reference number is taken
+employer.job.error.title.spam = The tile is considered spam
+employer.job.error.description.spam = The description is considered spam
+employer.job.error.referenceNumber.spam = The reference number is considered spam
+employer.job.error.moreInfo.spam = The more info. field is considered spam
+employer.job.delete.error = The Job can't be deleted because it's been already applied by a worker
+employer.job.error.totalDutiesPercentage = The Job can't be published because the duties have 100% of work load
+

@@ -13,24 +13,47 @@
 	<!-- Duty -->
 	
 	<bean id = "duty01" class = "acme.entities.jobs.Duty">
-		<property name = "title" value = "tituloooooo"/>
-		<property name = "description" value = "desc"/>
-		<property name = "percentage" value = "100.00"/>
-		<property name = "job" ref = "job02"/>
-	</bean>
-	
-	<bean id = "duty02" class = "acme.entities.jobs.Duty">
 		<property name = "title" value = "tituloooooo2"/>
 		<property name = "description" value = "desc2"/>
 		<property name = "percentage" value = "25.00"/>
 		<property name = "job" ref = "job01"/>
 	</bean>
 	
-	<bean id = "duty03" class = "acme.entities.jobs.Duty">
+	<bean id = "duty02" class = "acme.entities.jobs.Duty">
 		<property name = "title" value = "tituloooooo3"/>
 		<property name = "description" value = "desc3"/>
 		<property name = "percentage" value = "75.00"/>
 		<property name = "job" ref = "job01"/>
+	</bean>
+	
+	<bean id = "duty03" class = "acme.entities.jobs.Duty">
+		<property name = "title" value = "tituloooooo"/>
+		<property name = "description" value = "desc"/>
+		<property name = "percentage" value = "100.00"/>
+		<property name = "job" ref = "job02"/>
+	</bean>
+	
+	
+	
+	<bean id = "duty04" class = "acme.entities.jobs.Duty">
+		<property name = "title" value = "tituloooooo4"/>
+		<property name = "description" value = "desc4"/>
+		<property name = "percentage" value = "100.00"/>
+		<property name = "job" ref = "job03"/>
+	</bean>
+	
+	<bean id = "duty05" class = "acme.entities.jobs.Duty">
+		<property name = "title" value = "tituloooooo5"/>
+		<property name = "description" value = "desc5"/>
+		<property name = "percentage" value = "100.00"/>
+		<property name = "job" ref = "job04"/>
+	</bean>
+	
+	<bean id = "duty06" class = "acme.entities.jobs.Duty">
+		<property name = "title" value = "tituloooooo6"/>
+		<property name = "description" value = "desc6"/>
+		<property name = "percentage" value = "100.00"/>
+		<property name = "job" ref = "job05"/>
 	</bean>
 	
 	<!-- Employer Account -->
@@ -248,7 +271,7 @@
 		<property name = "skills" value = "skilfawfals"/>
 		<property name = "qualifications" value = "qsafwafad"/>
 		<property name = "worker" ref = "worker01"/>
-		<property name = "job" ref = "job01"/>
+		<property name = "job" ref = "job03"/>
 	</bean>
 	
 	<bean id = "jobapp04" class = "acme.entities.jobApplication.JobApplication">
@@ -270,7 +293,7 @@
 		<property name = "skills" value = "skilfawfals"/>
 		<property name = "qualifications" value = "qsafwafad"/>
 		<property name = "worker" ref = "worker02"/>
-		<property name = "job" ref = "job01"/>
+		<property name = "job" ref = "job05"/>
 	</bean>
 	
 	<!-- Company Record -->
