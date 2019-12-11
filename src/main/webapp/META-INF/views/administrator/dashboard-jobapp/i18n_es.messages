@@ -1,0 +1,3 @@
+administrator.dashboard.timeSeries.Pending = Solicitudes pendientes por día de las últimas 4 semanas
+administrator.dashboard.timeSeries.Accepted = Solicitudes aceptadas por día de las últimas 4 semanas
+administrator.dashboard.timeSeries.Rejected = Solicitudes rechazadas por día de las últimas 4 semanas

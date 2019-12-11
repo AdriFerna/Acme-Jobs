@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.Index;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -36,6 +38,7 @@ public class JobApplication extends DomainEntity {
 	private String				referenceNumber;
 
 	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date				creationMoment;
 
 	@NotBlank
@@ -56,6 +59,9 @@ public class JobApplication extends DomainEntity {
 
 	@Column(length = 1024)
 	private String				justification;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				updateMoment;
 
 	@NotNull
 	@ManyToOne(optional = false)
