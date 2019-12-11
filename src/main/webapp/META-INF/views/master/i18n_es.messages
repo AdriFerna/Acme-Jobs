@@ -66,6 +66,7 @@ master.menu.authenticated.message-thread.list = Hilos de Mensajes
 master.menu.employer = Empleador
 master.menu.employer.job.list = Lista de Trabajos
 master.menu.employer.jobApplication.list = Lista de Solicitudes de Trabajo
+master.menu.employer.job.create = Crear un nuevo trabajo
 
 # master.menu.worker #######################################################
 master.menu.worker = Trabajador

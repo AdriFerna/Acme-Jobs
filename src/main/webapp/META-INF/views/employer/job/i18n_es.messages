@@ -10,6 +10,22 @@ employer.job.form.label.salary = Salario
 employer.job.form.label.moreInfo = Más Info.
 employer.job.form.label.description = Descripción
 employer.job.form.button.return = Volver
+employer.job.form.button.create = Crear
+employer.job.form.button.delete = Borrar
+employer.job.form.button.update = Actualizar
+employer.job.form.button.publish = Publicar
+employer.duty.form.button.addDuty = Añadir responsabilidad
 
 employer.job.message.duties = Ver las responsabilidades del Trabajo
 employer.job.message.audit-record = Ver los registros de auditoría del trabajo
+
+employer.job.error.salaryCurrency = La moneda debe  ser EUROS (€)
+employer.job.error.noNegSalary = La cantidad debe ser positiva
+employer.job.error.deadline = La fecha límite debe estar en el futuro
+employer.job.error.referenceNumber = El número de referencia ya está siendo utilizado
+employer.job.error.title.spam = El título es considerado spam
+employer.job.error.description.spam = La descripción es considerada spam
+employer.job.error.referenceNumber.spam = El número de referencia es considerado spam
+employer.job.error.moreInfo.spam = El campo más info. es considerado spam
+employer.job.delete.error = El trabajo no puede ser borrado por que ya ha sido solicitado por un trabajador
+employer.job.error.totalDutiesPercentage = El trabajo no puede ser publicado porque las responsabilidades no suman el 100% de la carga de trabajo

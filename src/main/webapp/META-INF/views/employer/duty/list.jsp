@@ -10,3 +10,6 @@
 	<acme:list-column code="employer.duty.list.label.description" path="description" width="25%"/>
 	<acme:list-column code="employer.duty.list.label.percentage" path="percentage" width="25%"/>
 </acme:list>
+
+
+	

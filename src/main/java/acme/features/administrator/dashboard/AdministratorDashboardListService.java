@@ -2,8 +2,11 @@
 package acme.features.administrator.dashboard;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,14 +43,16 @@ public class AdministratorDashboardListService implements AbstractListService<Ad
 
 	@Override
 	public Collection<Dashboard> findMany(final Request<Dashboard> request) {
+		Calendar cal = Calendar.getInstance(TimeZone.getDefault());
+		Date ldt = cal.getTime();
 		List<Dashboard> result = new ArrayList<>();
 		Dashboard d = new Dashboard();
 		Integer totalNumberOfAnnouncements = this.repository.totalNumberOfAnnouncements();
 		Integer totalNumberOfCompanyRecords = this.repository.totalNumberOfCompanyRecords();
 		Integer totalNumberOfInvestorRecords = this.repository.totalNumberOfInvestorRecords();
 
-		Double[][] minMaxAvgStdFromRequests = this.repository.MinMaxAvgStdFromRequests();
-		Double[][] minMaxAvgStdFromOffers = this.repository.MinMaxAvgStdFromOffers();
+		Double[][] minMaxAvgStdFromRequests = this.repository.MinMaxAvgStdFromRequests(ldt);
+		Double[][] minMaxAvgStdFromOffers = this.repository.MinMaxAvgStdFromOffers(ldt);
 
 		List<List<String>> companiesBySector = this.repository.getNumberOfCampaniesBySector();
 		List<List<String>> investorsBySector = this.repository.getNumberOfInvestorBySector();
