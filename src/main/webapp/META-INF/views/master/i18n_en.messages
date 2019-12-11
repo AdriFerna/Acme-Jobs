@@ -129,6 +129,7 @@ master.menu.consumer.offer.create = Create Offer
 master.menu.sponsor = Sponsor
 master.menu.sponsor.commercialBanner = Commercial Banner List
 master.menu.sponsor.nonCommercialBanner = Non Commercial Banner List
+master.menu.sponsor.creditCard = Add Credit Card
 
 # master.menu.auditor ##########################################################
 
@@ -144,6 +145,8 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+master.menu.user-account.sponsor = Sponsor data
+master.menu.user-account.become-sponsor = Become a sponsor
 
 # master.footer ###############################################################
 

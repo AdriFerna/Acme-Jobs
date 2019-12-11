@@ -34,7 +34,7 @@ public abstract class Banner extends DomainEntity {
 
 	@NotNull
 	@Valid
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = true)
 	private Sponsor				sponsor;
 
 }
