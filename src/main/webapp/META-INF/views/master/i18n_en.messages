@@ -75,6 +75,7 @@ master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.dashboardJob = Job Dashboard
 master.menu.administrator.customParams = Customisation Parameters
 master.menu.administrator.auditorRequest = List Auditor Requests
+master.menu.administrator.dashboardJobApp = Job Applications Dashboard
 
 
 # master.menu.anonymous.announcements #######################################################s

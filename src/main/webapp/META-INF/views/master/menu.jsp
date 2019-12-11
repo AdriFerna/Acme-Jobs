@@ -68,6 +68,7 @@
 			<acme:menu-suboption code="master.menu.administrator.auditorRequest" action="/administrator/auditor-request/list"/>
 			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/list"/>
 			<acme:menu-suboption code="master.menu.administrator.dashboardJob" action="/administrator/dashboard-job/display"/>
+			<acme:menu-suboption code="master.menu.administrator.dashboardJobApp" action="/administrator/dashboard-jobapp/display"/>
 			<acme:menu-suboption code="master.menu.administrator.customParams" action="/administrator/custom-params/show"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.announcements.list" action="/administrator/announcement/list"/>
