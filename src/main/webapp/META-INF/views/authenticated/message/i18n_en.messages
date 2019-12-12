@@ -12,3 +12,5 @@ autheticated.message.form.button.return = Return
 autheticated.message.form.label.user.userAccount.username = Username of the creator
 autheticated.message.form.label.user.userAccount.identity.name = Name of the creator
 autheticated.message.form.label.user.userAccount.identity.surname = Surname of the creator
+
+authenticated.message.form.button.create = Add

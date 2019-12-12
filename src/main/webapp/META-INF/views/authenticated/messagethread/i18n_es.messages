@@ -8,3 +8,5 @@ autheticated.messagethread.form.label.title = Titulo
 autheticated.messagethread.form.label.creationMoment = Momento de Creación
 #autheticated.messagethread.form.label.users = Usuarios
 autheticated.messagethread.form.button.return = Volver
+
+authenticated.message.message.form.button.create = Añadir mensaje
