@@ -26,7 +26,7 @@ provider.request.label.aceptar= Sure?
 provider.request.form.button.create= Create
 provider.request.form.button.return = Return
 
-provider.request.error.deadline = The Deadline must be future
+provider.request.error.deadline = The Deadline must be at least one week in the future
 provider.request.error.ticker = The Ticker must be unique
 provider.request.error.aceptar = The confirmation must be selected
 provider.request.error.noNegReward = The reward must be positive 

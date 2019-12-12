@@ -1,0 +1,7 @@
+authenticated.auditor-request.form.label.firm = Firm
+authenticated.auditor-request.form.label.statement = Responsability Statement
+
+authenticated.auditor-request.alreadyRequested = You already requested the role
+
+authenticated.auditor-request.form.label.create = Create
+authenticated.auditor-request.form.label.return = Return

@@ -66,15 +66,20 @@ master.menu.authenticated.message-thread.list = Hilos de Mensajes
 master.menu.employer = Empleador
 master.menu.employer.job.list = Lista de Trabajos
 master.menu.employer.jobApplication.list = Lista de Solicitudes de Trabajo
+master.menu.employer.job.create = Crear un nuevo trabajo
 
 # master.menu.worker #######################################################
 master.menu.worker = Trabajador
+master.menu.employer.jobApplication.list = Lista de Solicitudes de Trabajo
+master.menu.employer.job.list = Lista de Trabajos
 
 # master.menu.administrator.Display #######################################################
 master.menu.administrator.adminDisplay = Display de Administrador
 master.menu.administrator.dashboardJob = Display de Administrador de Trabajos
 master.menu.administrator.dashboard = Panel de control
 master.menu.administrator.customParams = Parámetros de Customización
+master.menu.administrator.auditorRequest = Lista de Peticiones de Auditor
+master.menu.administrator.dashboardJobApp  = Display de Administrador de Solicitudes de Trabajo
 
 # master.menu.anonymous.announcements #######################################################
 master.menu.anonymous.announcements.list = Lista de Anuncios
@@ -144,6 +149,14 @@ master.menu.user-account.provider = Datos de proveedor
 master.menu.user-account.become-provider = Hazte proveedor
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
+
+master.menu.user-account.become-employer = Hazte empleador
+master.menu.user-account.employer = Datos de empleador
+
+master.menu.user-account.become-worker = Hazte trabajador
+master.menu.user-account.worker = Datos del trabajador
+
+master.menu.user-account.become-auditor = Solicitar rol de auditor
 
 ﻿# master.footer ###############################################################
 
