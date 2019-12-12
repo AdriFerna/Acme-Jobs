@@ -69,6 +69,8 @@ master.menu.employer.jobApplication.list = Lista de Solicitudes de Trabajo
 
 # master.menu.worker #######################################################
 master.menu.worker = Trabajador
+master.menu.employer.jobApplication.list = Lista de Solicitudes de Trabajo
+master.menu.employer.job.list = Lista de Trabajos
 
 # master.menu.administrator.Display #######################################################
 master.menu.administrator.adminDisplay = Display de Administrador
