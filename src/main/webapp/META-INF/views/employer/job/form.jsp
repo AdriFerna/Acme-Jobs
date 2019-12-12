@@ -16,7 +16,11 @@
 <acme:form-textarea code="employer.job.form.label.description" path="description"/>
 
 
-
+<acme:form-submit code="employer.duty.form.button.addDuty" 
+     action="/employer/duty/add?idJob=${id}"
+     test="${command == 'show'  && status == 'draft'}"
+     method = "get"/>
+     
 <acme:form-submit code="employer.job.form.button.create" 
 	action="/employer/job/create"
 	test="${command == 'create'}"/>
@@ -47,14 +51,6 @@
 	test="${command == 'show'  && status == 'draft'}"/>
 	
 	</acme:form>
-	<br>
-	
-	<acme:form> 
-	<acme:form-hidden path="id"/>
-	<acme:form-submit code="employer.duty.form.button.addDuty" 
-     action="/employer/duty/add"
-     test="${command == 'show'  && status == 'draft'}"/>
-	</acme:form> 
 	
 	
 <jstl:if test="${command != 'create' }" > 
