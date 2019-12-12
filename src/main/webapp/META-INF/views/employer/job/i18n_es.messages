@@ -21,7 +21,7 @@ employer.job.message.audit-record = Ver los registros de auditoría del trabajo
 
 employer.job.error.salaryCurrency = La moneda debe  ser EUROS (€)
 employer.job.error.noNegSalary = La cantidad debe ser positiva
-employer.job.error.deadline = La fecha límite debe estar en el futuro
+employer.job.error.deadline = La fecha límite debe estar al menos una semana en el futuro
 employer.job.error.referenceNumber = El número de referencia ya está siendo utilizado
 employer.job.error.title.spam = El título es considerado spam
 employer.job.error.description.spam = La descripción es considerada spam

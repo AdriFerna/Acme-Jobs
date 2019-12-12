@@ -11,4 +11,5 @@ employer.duty.message.job = Duties' Job
 
 employer.duty.error.title.spam = The title is considered spam
 employer.duty.error.description.spam =  The Description is considered spam
-employer.job.error.totalDutiesPercentage = The sum of the percentages of work per week exceeds 100%
+employer.job.error.totalDutiesPercentage= The sum of the percentages of work per week exceeds 100%
+employer.duty.error.percentageSuperado = The sum of the percentages of work per week exceeds 100%

@@ -20,7 +20,6 @@
 	
 	<acme:form-textarea code="administrator.auditor-request.form.label.statement" path="statement"/>
 	
-	<acme:form-hidden path="userAccountId"/>
 	
 
 	<acme:form-submit code="administrator.auditor-request.form.button.accept" 

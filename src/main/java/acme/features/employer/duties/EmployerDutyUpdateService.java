@@ -10,13 +10,12 @@ import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
 import acme.forms.SpamCheck;
 import acme.framework.components.Errors;
-import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.services.AbstractCreateService;
+import acme.framework.services.AbstractUpdateService;
 
 @Service
-public class EmployerDutyAddService implements AbstractCreateService<Employer, Duty> {
+public class EmployerDutyUpdateService implements AbstractUpdateService<Employer, Duty> {
 
 	@Autowired
 	EmployerDutyRepository repository;
@@ -25,8 +24,8 @@ public class EmployerDutyAddService implements AbstractCreateService<Employer, D
 	@Override
 	public boolean authorise(final Request<Duty> request) {
 		assert request != null;
-		int idJob = request.getModel().getInteger("idJob");
-		Job j = this.repository.findOneById(idJob);
+		int idDuty = request.getModel().getInteger("id");
+		Job j = this.repository.findJobByDutyId(idDuty);
 		int employerId = request.getPrincipal().getActiveRoleId();
 		boolean res = j.getEmployer().getId() == employerId && j.getStatus().equals("draft");
 		return res;
@@ -48,20 +47,13 @@ public class EmployerDutyAddService implements AbstractCreateService<Employer, D
 		assert model != null;
 		request.unbind(entity, model, "title", "description", "percentage");
 
-		if (request.isMethod(HttpMethod.GET)) {
-			int idJob = request.getModel().getInteger("idJob");
-			model.setAttribute("idJob", idJob);
-		}
-
 	}
 
 	@Override
-	public Duty instantiate(final Request<Duty> request) {
+	public Duty findOne(final Request<Duty> request) {
 		assert request != null;
-		int idJob = request.getModel().getInteger("idJob");
-		Job j = this.repository.findOneById(idJob);
-		Duty d = new Duty();
-		d.setJob(j);
+		int id = request.getModel().getInteger("id");
+		Duty d = this.repository.findOneDuty(id);
 		return d;
 	}
 
@@ -72,8 +64,10 @@ public class EmployerDutyAddService implements AbstractCreateService<Employer, D
 		assert errors != null;
 
 		Configuration c = this.repository.getConfigParams();
-		int idJob = request.getModel().getInteger("idJob");
-		Double sumaTotalPercentages = this.repository.getTotalPercentageOfDuties(idJob);
+		int idDuty = request.getModel().getInteger("id");
+		Job j = this.repository.findJobByDutyId(idDuty);
+		int idJob = j.getId();
+		Double sumaTotalPercentages = this.repository.getTotalPercentageOfDutiesUpdate(idJob, idDuty);
 
 		if (!errors.hasErrors("title")) {
 			boolean titleSpam = SpamCheck.checkSpam(entity.getTitle(), c);
@@ -91,10 +85,11 @@ public class EmployerDutyAddService implements AbstractCreateService<Employer, D
 	}
 
 	@Override
-	public void create(final Request<Duty> request, final Duty entity) {
+	public void update(final Request<Duty> request, final Duty entity) {
 		assert request != null;
 		assert entity != null;
 		this.repository.save(entity);
+
 	}
 
 }

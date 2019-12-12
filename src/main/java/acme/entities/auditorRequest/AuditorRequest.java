@@ -2,11 +2,13 @@
 package acme.entities.auditorRequest;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import acme.framework.entities.DomainEntity;
+import acme.framework.entities.UserAccount;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,7 +21,8 @@ public class AuditorRequest extends DomainEntity {
 
 	@NotNull
 	@Valid
-	private int					userAccountId;
+	@ManyToOne()
+	private UserAccount			user;
 
 	private Boolean				status;
 

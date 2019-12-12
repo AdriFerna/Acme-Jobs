@@ -1,7 +1,9 @@
 
 package acme.features.employer.jobs;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -65,6 +67,9 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		assert errors != null;
 
 		Date date = new Date();
+		Calendar cl = Calendar.getInstance(TimeZone.getDefault());
+		cl.add(Calendar.DAY_OF_MONTH, 7);
+		date = cl.getTime();
 		Configuration c = this.repository.getConfigParams();
 
 		if (!errors.hasErrors("deadline")) {

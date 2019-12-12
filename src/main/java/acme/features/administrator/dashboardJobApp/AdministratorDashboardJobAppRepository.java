@@ -19,7 +19,7 @@ public interface AdministratorDashboardJobAppRepository extends AbstractReposito
 	@Query("select a from JobApplication a where a.updateMoment > ?1 and a.status ='rejected' ")
 	List<JobApplication> findRejected(Date ldt);
 
-	@Query("select a from JobApplication a where a.creationMoment > ?1")
+	@Query("select a from JobApplication a")
 	List<JobApplication> findPending(Date ldt);
 
 }

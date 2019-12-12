@@ -40,6 +40,7 @@ public class AdministratorDashboardJobAppDisplayService implements AbstractShowS
 
 	@Override
 	public DashboardJobApp findOne(final Request<DashboardJobApp> request) {
+		String idioma = request.getLocale().getLanguage();
 		DashboardJobApp dja = new DashboardJobApp();
 		Calendar ldt1 = Calendar.getInstance(TimeZone.getDefault());
 		ldt1.add(Calendar.DAY_OF_MONTH, -28);
@@ -48,13 +49,25 @@ public class AdministratorDashboardJobAppDisplayService implements AbstractShowS
 
 		//ACCEPTED
 		List<JobApplication> listAccepted = this.repository.findAccepted(queryDate);
-		String[][] datosAccepted = new String[28][4];
+		String[][] datosAccepted = new String[28][2];
 		Integer iA = 0;
+		String fecha1 = "";
 		while (ldt1.before(today)) {
-			Integer cont = (int) listAccepted.stream().filter(x -> x.getUpdateMoment().before(ldt1.getTime())).count();
+			Calendar temp = Calendar.getInstance(TimeZone.getDefault());
+			Integer cont = 0;
+			for (JobApplication j : listAccepted) {
+				temp.setTime(j.getUpdateMoment());
+				if (temp.get(Calendar.DAY_OF_MONTH) == ldt1.get(Calendar.DAY_OF_MONTH) && temp.get(Calendar.MONTH) == ldt1.get(Calendar.MONTH) && temp.get(Calendar.YEAR) == ldt1.get(Calendar.YEAR)) {
+					cont++;
+				}
+			}
 			datosAccepted[iA][0] = cont.toString();
-			String fecha = Integer.toString(ldt1.get(Calendar.YEAR)) + "/" + Integer.toString(ldt1.get(Calendar.MONTH) + 1) + "/" + Integer.toString(ldt1.get(Calendar.DAY_OF_MONTH));
-			datosAccepted[iA][1] = fecha;
+			if (idioma.equals("en")) {
+				fecha1 = Integer.toString(ldt1.get(Calendar.YEAR)) + "/" + Integer.toString(ldt1.get(Calendar.MONTH) + 1) + "/" + Integer.toString(ldt1.get(Calendar.DAY_OF_MONTH));
+			} else {
+				fecha1 = Integer.toString(ldt1.get(Calendar.DAY_OF_MONTH)) + "/" + Integer.toString(ldt1.get(Calendar.MONTH) + 1) + "/" + Integer.toString(ldt1.get(Calendar.YEAR));
+			}
+			datosAccepted[iA][1] = fecha1;
 			ldt1.add(Calendar.DAY_OF_MONTH, 1);
 			iA++;
 		}
@@ -64,14 +77,26 @@ public class AdministratorDashboardJobAppDisplayService implements AbstractShowS
 		Calendar ldt2 = Calendar.getInstance(TimeZone.getDefault());
 		ldt2.add(Calendar.DAY_OF_MONTH, -28);
 		List<JobApplication> listRejected = this.repository.findRejected(queryDate);
-		String[][] datosRejected = new String[28][4];
+		String[][] datosRejected = new String[28][2];
 		Integer iR = 0;
-
+		String fecha2 = "";
 		while (ldt2.before(today)) {
-			Integer cont = (int) listRejected.stream().filter(x -> x.getUpdateMoment().before(ldt2.getTime())).count();
+
+			Calendar temp = Calendar.getInstance(TimeZone.getDefault());
+			Integer cont = 0;
+			for (JobApplication j : listRejected) {
+				temp.setTime(j.getUpdateMoment());
+				if (temp.get(Calendar.DAY_OF_MONTH) == ldt2.get(Calendar.DAY_OF_MONTH) && temp.get(Calendar.MONTH) == ldt2.get(Calendar.MONTH) && temp.get(Calendar.YEAR) == ldt2.get(Calendar.YEAR)) {
+					cont++;
+				}
+			}
 			datosRejected[iR][0] = cont.toString();
-			String fecha = Integer.toString(ldt2.get(Calendar.YEAR)) + "/" + Integer.toString(ldt2.get(Calendar.MONTH) + 1) + "/" + Integer.toString(ldt2.get(Calendar.DAY_OF_MONTH));
-			datosRejected[iR][1] = fecha;
+			if (idioma.equals("en")) {
+				fecha2 = Integer.toString(ldt2.get(Calendar.YEAR)) + "/" + Integer.toString(ldt2.get(Calendar.MONTH) + 1) + "/" + Integer.toString(ldt2.get(Calendar.DAY_OF_MONTH));
+			} else {
+				fecha2 = Integer.toString(ldt2.get(Calendar.DAY_OF_MONTH)) + "/" + Integer.toString(ldt2.get(Calendar.MONTH) + 1) + "/" + Integer.toString(ldt2.get(Calendar.YEAR));
+			}
+			datosRejected[iR][1] = fecha2;
 			ldt2.add(Calendar.DAY_OF_MONTH, 1);
 			iR++;
 		}
@@ -83,7 +108,7 @@ public class AdministratorDashboardJobAppDisplayService implements AbstractShowS
 		List<JobApplication> listPending = this.repository.findPending(queryDate);
 		String[][] datosPending = new String[28][2];
 		Integer iP = 0;
-
+		String fecha3 = "";
 		while (ldt3.before(today)) {
 			Integer cont = 0;
 			for (JobApplication j : listPending) {
@@ -94,8 +119,12 @@ public class AdministratorDashboardJobAppDisplayService implements AbstractShowS
 				}
 			}
 			datosPending[iP][0] = cont.toString();
-			String fecha = Integer.toString(ldt3.get(Calendar.YEAR)) + "/" + Integer.toString(ldt3.get(Calendar.MONTH) + 1) + "/" + Integer.toString(ldt3.get(Calendar.DAY_OF_MONTH));
-			datosPending[iP][1] = fecha;
+			if (idioma.equals("en")) {
+				fecha3 = Integer.toString(ldt3.get(Calendar.YEAR)) + "/" + Integer.toString(ldt3.get(Calendar.MONTH) + 1) + "/" + Integer.toString(ldt3.get(Calendar.DAY_OF_MONTH));
+			} else {
+				fecha3 = Integer.toString(ldt3.get(Calendar.DAY_OF_MONTH)) + "/" + Integer.toString(ldt3.get(Calendar.MONTH) + 1) + "/" + Integer.toString(ldt3.get(Calendar.YEAR));
+			}
+			datosPending[iP][1] = fecha3;
 			ldt3.add(Calendar.DAY_OF_MONTH, 1);
 			iP++;
 		}

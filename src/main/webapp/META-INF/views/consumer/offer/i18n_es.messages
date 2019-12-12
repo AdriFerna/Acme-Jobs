@@ -20,7 +20,7 @@ consumer.offer.form.label.moneyMin = Min Recompensa
 consumer.offer.form.label.moneyMax = Max Recompensa
 consumer.offer.label.aceptar = ¿Confirmar?
 
-consumer.offer.error.deadline = El Fin de la oferta debe ser furturo
+consumer.offer.error.deadline = El Fin de la oferta debe estar al menos una semana en el futuro
 consumer.offer.error.ticker = El Ticker debe ser único
 consumer.offer.error.aceptar = La confirmación debe estar marcada
 consumer.offer.error.moneyMin = La recompensa mínima no puede ser mayor que la máxima

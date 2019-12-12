@@ -21,7 +21,7 @@ consumer.offer.form.label.moneyMax = Max Reward
 consumer.offer.form.label.ticker = Ticker
 consumer.offer.label.aceptar = Sure?
 
-consumer.offer.error.deadline = The Deadline must be future
+consumer.offer.error.deadline = The Deadline must be at least one week in the future
 consumer.offer.error.ticker = The Ticker must be unique
 consumer.offer.error.aceptar = The confirmation must be selected
 consumer.offer.error.moneyMin = The minimum reward cannot be greater than the maximum
