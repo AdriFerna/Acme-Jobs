@@ -8,6 +8,8 @@
 	<acme:form-moment 
 		code="autheticated.messagethread.list.label.creationMoment" 
 		path="creationMoment"/>
+		
+		
 	</acme:form>	
 	
 	<acme:message code="authenticated.messagethread.message.users"></acme:message>
@@ -17,9 +19,19 @@
 	<br>
 	</jstl:forEach>
 	
+	
+	
 	<a href = /acme-jobs/authenticated/message/list?idThread=<jstl:out value="${id}"></jstl:out>>
 <acme:message code="authenticated.message.message.message"/>
 </a>
+
+
+<acme:form>
+	<acme:form-submit code="authenticated.message.message.form.button.create" action="/authenticated/message/create?idThread=${id}"
+	method="get"/>
+</acme:form>
+	
+
 
 		<acme:form>
 	<acme:form-return code="autheticated.messagethread.form.button.return"/>

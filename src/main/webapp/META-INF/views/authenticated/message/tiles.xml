@@ -11,4 +11,6 @@
 	<definition name="authenticated/message/form" extends="master">
 		<put-attribute name="body" type="template" value="../authenticated/message/form.jsp"/>	
 	</definition>
+	
+	
 </tiles-definitions>

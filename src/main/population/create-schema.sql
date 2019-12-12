@@ -180,6 +180,7 @@
        `id` integer not null,
         `version` integer not null,
         `creation_moment` datetime(6),
+        `justification` varchar(1024),
         `qualifications` varchar(1024),
         `reference_number` varchar(255),
         `skills` varchar(1024),
