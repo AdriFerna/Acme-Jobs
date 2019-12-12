@@ -65,6 +65,9 @@ public class JobApplication extends DomainEntity {
 	@Column(length = 1024)
 	private String				justification;
 
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				updateMoment;
+
 	@NotNull
 	@ManyToOne(optional = false)
 	private Job					job;

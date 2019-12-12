@@ -44,7 +44,7 @@ public class EmployerDutyListService implements AbstractListService<Employer, Du
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "description", "percentage", "job.title");
+		request.unbind(entity, model, "title", "description", "percentage", "job.title", "job.id");
 
 	}
 

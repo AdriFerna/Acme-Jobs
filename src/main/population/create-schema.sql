@@ -44,6 +44,16 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `auditor_request` (
+       `id` integer not null,
+        `version` integer not null,
+        `firm` varchar(255),
+        `statement` varchar(255),
+        `status` bit,
+        `user_account_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `authenticated` (
        `id` integer not null,
         `version` integer not null,
@@ -180,11 +190,13 @@
        `id` integer not null,
         `version` integer not null,
         `creation_moment` datetime(6),
+        `justification` varchar(1024),
         `qualifications` varchar(1024),
         `reference_number` varchar(255),
         `skills` varchar(1024),
         `statement` varchar(1024),
         `status` varchar(255),
+        `update_moment` datetime(6),
         `job_id` integer not null,
         `worker_id` integer not null,
         primary key (`id`)

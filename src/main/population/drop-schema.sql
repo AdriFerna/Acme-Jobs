@@ -101,6 +101,8 @@
 
     drop table if exists `auditor`;
 
+    drop table if exists `auditor_request`;
+
     drop table if exists `authenticated`;
 
     drop table if exists `authenticated_message_thread`;

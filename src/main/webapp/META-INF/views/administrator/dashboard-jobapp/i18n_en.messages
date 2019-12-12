@@ -1,0 +1,3 @@
+administrator.dashboard.timeSeries.Pending = Pending Applications Per Day From The Last 4 Weeks
+administrator.dashboard.timeSeries.Accepted = Accepted Applications Per Day From The Last 4 Weeks
+administrator.dashboard.timeSeries.Rejected = Rejected Applications Per Day From The Last 4 Weeks
