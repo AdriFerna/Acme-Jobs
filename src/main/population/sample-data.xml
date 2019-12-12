@@ -250,6 +250,8 @@
 		<property name = "qualifications" value = "qsad"/>
 		<property name = "worker" ref = "worker01"/>
 		<property name = "job" ref = "job02"/>
+		<property name = "justification" value = ""/>
+		<property name = "updateMoment" value = ""/>
 	</bean>
 	
 	<bean id = "jobapp02" class = "acme.entities.jobApplication.JobApplication">
@@ -261,6 +263,8 @@
 		<property name = "qualifications" value = "qsafwafad"/>
 		<property name = "worker" ref = "worker02"/>
 		<property name = "job" ref = "job02"/>
+		<property name = "justification" value = ""/>
+		<property name = "updateMoment" value = ""/>
 	</bean>
 	
 	<bean id = "jobapp03" class = "acme.entities.jobApplication.JobApplication">
@@ -272,6 +276,8 @@
 		<property name = "qualifications" value = "qsafwafad"/>
 		<property name = "worker" ref = "worker01"/>
 		<property name = "job" ref = "job03"/>
+		<property name = "justification" value = ""/>
+		<property name = "updateMoment" value = ""/>
 	</bean>
 	
 	<bean id = "jobapp04" class = "acme.entities.jobApplication.JobApplication">
@@ -283,6 +289,8 @@
 		<property name = "qualifications" value = "qsafwafad"/>
 		<property name = "worker" ref = "worker01"/>
 		<property name = "job" ref = "job02"/>
+		<property name = "justification" value = ""/>
+		<property name = "updateMoment" value = ""/>
 	</bean>
 	
 	<bean id = "jobapp05" class = "acme.entities.jobApplication.JobApplication">
@@ -294,6 +302,8 @@
 		<property name = "qualifications" value = "qsafwafad"/>
 		<property name = "worker" ref = "worker02"/>
 		<property name = "job" ref = "job05"/>
+		<property name = "justification" value = ""/>
+		<property name = "updateMoment" value = ""/>
 	</bean>
 	
 	<!-- Company Record -->

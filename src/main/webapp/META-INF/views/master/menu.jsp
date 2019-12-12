@@ -55,6 +55,7 @@
 		
 		<acme:menu-option code="master.menu.worker" access="hasRole('Worker')">
 		<acme:menu-suboption code="master.menu.employer.jobApplication.list" action="/worker/job-application/list_mine"/>
+		<acme:menu-suboption code="master.menu.employer.job.list" action="/worker/job/list"/>
 		</acme:menu-option>
 	
         

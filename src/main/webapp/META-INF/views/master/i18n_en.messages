@@ -68,6 +68,8 @@ master.menu.employer.jobApplication.list = List Job Applications
 master.menu.employer.job.create = Create a new Job
 # master.menu.worker#######################################################
 master.menu.worker = Worker
+master.menu.employer.jobApplication.list = List Job Applications
+master.menu.employer.job.list = List Jobs
 
 # master.menu.administrator.Display #######################################################
 master.menu.administrator.adminDisplay = Admin Display

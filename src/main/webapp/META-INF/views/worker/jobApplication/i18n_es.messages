@@ -10,4 +10,9 @@ worker.jobApplication.form.label.skills = Habilidades
 worker.jobApplication.form.label.qualifications = Titulos
 worker.job.message.job = Ver el trabajo solicitado
 
-autheticated.jobApplication.form.button.return = Volver
+worker.jobApplication.form.button.return = Volver
+worker.jobApplication.form.button.update = Actualizar
+worker.jobApplication.form.button.delete = Eliminar
+
+worker.jobApplication.error.referenceNumber = El numero de referencia debe ser unico
+worker.jobApplication.error.status = Solo puedes eliminar solicitudes "pendientes"

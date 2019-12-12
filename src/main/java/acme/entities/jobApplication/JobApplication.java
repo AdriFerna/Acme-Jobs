@@ -12,6 +12,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
@@ -39,7 +40,11 @@ public class JobApplication extends DomainEntity {
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
+	@Past
 	private Date				creationMoment;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				updateMoment;
 
 	@NotBlank
 	@Pattern(regexp = "^(pending|accepted|rejected)$")

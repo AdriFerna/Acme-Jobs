@@ -1,0 +1,15 @@
+worker.job.list.label.referenceNumber = Nº de referencia
+worker.job.list.label.title = Título
+worker.job.list.label.salary = Salario
+
+worker.job.form.label.referenceNumber = Nº de referencia
+worker.job.form.label.status = Estado
+worker.job.form.label.title = Título
+worker.job.form.label.deadline = Fecha límite
+worker.job.form.label.salary = Salario
+worker.job.form.label.moreInfo = Más Info.
+worker.job.form.label.description = Descripción
+worker.job.form.button.return = Volver
+worker.jobApplication.form.button.create = Crear solicitud a este trabajo
+authenticated.job.message.duties = Ver las responsabilidades del Trabajo
+authenticated.job.message.audit-record = Ver los registros de auditoría
