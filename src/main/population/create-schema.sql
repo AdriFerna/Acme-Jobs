@@ -129,7 +129,7 @@
         `expiration_month` integer not null,
         `expiration_year` integer not null,
         `holder` varchar(255),
-        `user_id` integer not null,
+        `sponsor_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -378,8 +378,8 @@ create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
        references `user_account` (`id`);
 
     alter table `credit_card` 
-       add constraint `FKikyh5cwqvweutoxhvicw1vkn2` 
-       foreign key (`user_id`) 
+       add constraint `FK31l5hvh7p1nx1aw6v649gw3rc` 
+       foreign key (`sponsor_id`) 
        references `sponsor` (`id`);
 
     alter table `duty` 

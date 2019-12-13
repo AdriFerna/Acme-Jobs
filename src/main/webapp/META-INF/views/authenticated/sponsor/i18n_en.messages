@@ -9,13 +9,8 @@
 # they accept any liabilities with respect to them.
 
 authenticated.sponsor.form.label.organisationName = Organisation Name
-authenticated.sponsor.form.label.creditCard.cardNumber = Card Number
-authenticated.sponsor.form.label.creditCard.holder = Holder
-authenticated.sponsor.form.label.creditCard.cvv = CVV
-authenticated.sponsor.form.label.creditCard.brand = Brand
-authenticated.sponsor.form.label.creditCard.expirationMonth = Expiration Month
-authenticated.sponsor.form.label.creditCard.expirationYear = Expiration Year
 
 authenticated.sponsor.form.button.create = Create
+authenticated.sponsor.form.button.creditCard = Add Credit Card
 authenticated.sponsor.form.button.update = Update
 authenticated.sponsor.form.button.return = Return

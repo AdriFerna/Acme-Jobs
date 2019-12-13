@@ -1,5 +1,5 @@
 /*
- * AuthenticatedCreditCardAddService.java
+ * SponsorCreditCardCreateService.java
  *
  * Copyright (c) 2019 Rafael Corchuelo.
  *
@@ -11,6 +11,8 @@
  */
 
 package acme.features.sponsor.creditCard;
+
+import java.time.YearMonth;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -64,6 +66,7 @@ public class SponsorCreditCardCreateService implements AbstractCreateService<Spo
 		assert model != null;
 
 		request.unbind(entity, model, "cardNumber", "holder", "cvv", "brand", "expirationMonth", "expirationYear");
+
 	}
 
 	@Override
@@ -76,11 +79,11 @@ public class SponsorCreditCardCreateService implements AbstractCreateService<Spo
 		Sponsor sponsor;
 
 		principal = request.getPrincipal();
-		userAccountId = principal.getActiveRoleId();
+		userAccountId = principal.getAccountId();
 		sponsor = this.repositorySponsor.findOneSponsorByUserAccountId(userAccountId);
 
 		result = new CreditCard();
-		result.setUser(sponsor);
+		result.setSponsor(sponsor);
 
 		return result;
 	}
@@ -90,6 +93,18 @@ public class SponsorCreditCardCreateService implements AbstractCreateService<Spo
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		if (!errors.hasErrors("expirationYear") && !errors.hasErrors("expirationMonth")) {
+			YearMonth ym = YearMonth.now();
+			YearMonth introducido = YearMonth.of(entity.getExpirationYear(), entity.getExpirationMonth());
+			boolean cmp = introducido.isBefore(ym);
+			errors.state(request, !cmp, "creditCard.expirationYear", "administrator.commercialBanner.error.expiration");
+			errors.state(request, !cmp, "creditCard.expirationMonth", "administrator.commercialBanner.error.expiration");
+		}
+		if (!errors.hasErrors("cvv")) {
+			boolean rangoCVV = String.valueOf(entity.getCvv()).length() == 3;
+			errors.state(request, rangoCVV, "creditCard.cvv", "administrator.commercialBanner.error.cvv");
+		}
 	}
 
 	@Override

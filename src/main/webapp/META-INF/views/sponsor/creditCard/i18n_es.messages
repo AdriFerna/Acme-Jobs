@@ -8,14 +8,16 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-request.form.label.organisationName = Nombre de Organización
-request.form.label.creditCard.cardNumber = Número de Tarjeta
-request.form.label.creditCard.holder = Propietario
-request.form.label.creditCard.cvv = CVV
-request.form.label.creditCard.brand = Marca
-request.form.label.creditCard.expirationMonth = Mes de Expiración
-request.form.label.creditCard.expirationYear = Año de Expiración
+sponsor.creditCard.form.label.cardNumber = Número de Tarjeta
+sponsor.creditCard.form.label.holder = Propietario
+sponsor.creditCard.form.label.cvv = CVV
+sponsor.creditCard.form.label.brand = Marca
+sponsor.creditCard.form.label.expirationMonth = Mes de Expiración
+sponsor.creditCard.form.label.expirationYear = Año de Expiración
 
-sponsor.form.button.create = Crear
-sponsor.form.button.update = Actualizar
-sponsor.form.button.return = Volver
+sponsor.creditCard.list.label.cardNumber = Número de Tarjeta
+sponsor.creditCard.list.label.brand = Propietario
+sponsor.creditCard.list.button.create = Crear
+
+sponsor.creditCard.form.button.update = Actualizar
+sponsor.creditCard.form.button.return = Volver

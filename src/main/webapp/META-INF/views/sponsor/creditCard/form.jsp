@@ -16,15 +16,16 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-textbox code="sponsor.form.label.creditCard.cardNumber" path="cardNumber"/>
-	<acme:form-textbox code="sponsor.form.label.creditCard.holder" path="holder"/>
-	<acme:form-textbox code="sponsor.form.label.creditCard.cvv" path="cvv"/>
-	<acme:form-textbox code="sponsor.form.label.creditCard.brand" path="brand"/>
-	<acme:form-textbox code="sponsor.form.label.creditCard.expirationMonth" path="expirationMonth"/>
-	<acme:form-textbox code="sponsor.form.label.creditCard.expirationYear" path="expirationYear"/>
+	<acme:form-textbox code="sponsor.creditCard.form.label.cardNumber" path="cardNumber"/>
+	<acme:form-textbox code="sponsor.creditCard.form.label.holder" path="holder"/>
+	<acme:form-textbox code="sponsor.creditCard.form.label.cvv" path="cvv"/>
+	<acme:form-textbox code="sponsor.creditCard.form.label.brand" path="brand"/>
+	<acme:form-textbox code="sponsor.creditCard.form.label.expirationMonth" path="expirationMonth"/>
+	<acme:form-textbox code="sponsor.creditCard.form.label.expirationYear" path="expirationYear"/>
 	
-	<acme:form-submit test="${command == 'create' }" code="sponsor.form.button.create" action="/sponsor/credit-card/create"/>
-	<acme:form-submit test="${command == 'update' }" code="sponsor.form.button.update" action="/sponsor/credit-card/update"/>
+	<acme:form-submit test="${command == 'create' }" code="sponsor.creditCard.form.button.create" action="/sponsor/credit-card/create"/>
+	<acme:form-submit test="${command == 'show' }" code="sponsor.creditCard.form.button.update" action="/sponsor/credit-card/update"/>
 	
-	<acme:form-return code="sponsor.form.button.return"/>
+	<acme:form-return code="sponsor.creditCard.form.button.return"/>
+	
 </acme:form>

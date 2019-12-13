@@ -51,6 +51,6 @@ public class CreditCard extends DomainEntity {
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private Sponsor				user;
+	private Sponsor				sponsor;
 
 }

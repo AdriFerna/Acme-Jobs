@@ -18,6 +18,10 @@
 
 <tiles-definitions>
 	
+	<definition name="sponsor/credit-card/list" extends="master">
+		<put-attribute name="body" type="template" value="../sponsor/creditCard/list.jsp" />
+	</definition>
+	
 	<definition name="sponsor/credit-card/form" extends="master">
 		<put-attribute name="body" type="template" value="../sponsor/creditCard/form.jsp" />
 	</definition>

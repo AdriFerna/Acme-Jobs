@@ -35,7 +35,7 @@ public class AuthenticatedSponsorUpdateService implements AbstractUpdateService<
 	private AuthenticatedSponsorRepository repository;
 
 
-	// AbstractUpdateService<Authenticated, Provider> interface ---------------
+	// AbstractUpdateService<Authenticated, Sponsor> interface ---------------
 
 	@Override
 	public boolean authorise(final Request<Sponsor> request) {

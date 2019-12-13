@@ -16,6 +16,14 @@ import acme.framework.controllers.AbstractController;
 @RequestMapping("/sponsor/credit-card/")
 public class SponsorCreditCardController extends AbstractController<Sponsor, CreditCard> {
 
+	// Internal state ---------------------------------------------------------
+
+	@Autowired
+	private SponsorCreditCardShowService	showService;
+
+	@Autowired
+	private SponsorCreditCardListService	listService;
+
 	@Autowired
 	private SponsorCreditCardCreateService	createService;
 
@@ -23,8 +31,12 @@ public class SponsorCreditCardController extends AbstractController<Sponsor, Cre
 	private SponsorCreditCardUpdateService	updateService;
 
 
+	// Constructors -----------------------------------------------------------
+
 	@PostConstruct
 	private void initialise() {
+		super.addBasicCommand(BasicCommand.SHOW, this.showService);
+		super.addBasicCommand(BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.CREATE, this.createService);
 		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
 	}

@@ -612,7 +612,7 @@
 		<property name="brand" value="VISA" />
 		<property name="expirationMonth" value="12" />
 		<property name="expirationYear" value="2019" />
-		<property name="user" ref="Sponsor1" />
+		<property name="sponsor" ref="Sponsor1" />
 	</bean>
 
 	<bean id="creditcard02" class="acme.entities.banners.CreditCard">
@@ -622,7 +622,7 @@
 		<property name="brand" value="MasterCard" />
 		<property name="expirationMonth" value="12" />
 		<property name="expirationYear" value="2020" />
-		<property name="user" ref="Sponsor2" />
+		<property name="sponsor" ref="Sponsor2" />
 	</bean>
 		
 	<bean id="creditcard03" class="acme.entities.banners.CreditCard">
@@ -632,7 +632,7 @@
 		<property name="brand" value="Visa" />
 		<property name="expirationMonth" value="06" />
 		<property name="expirationYear" value="2024" />
-		<property name="user" ref="Sponsor3" />
+		<property name="sponsor" ref="Sponsor3" />
 	</bean>
 	
 	<bean id="creditcard04" class="acme.entities.banners.CreditCard">
@@ -642,7 +642,7 @@
 		<property name="brand" value="Visa" />
 		<property name="expirationMonth" value="12" />
 		<property name="expirationYear" value="2022" />
-		<property name="user" ref="Sponsor4" />
+		<property name="sponsor" ref="Sponsor4" />
 	</bean>
 	
 	<!-- Non Commercial Banner -->

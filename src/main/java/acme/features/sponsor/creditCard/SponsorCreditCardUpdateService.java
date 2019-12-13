@@ -12,12 +12,13 @@
 
 package acme.features.sponsor.creditCard;
 
+import java.time.YearMonth;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.banners.CreditCard;
 import acme.entities.roles.Sponsor;
-import acme.features.authenticated.sponsor.AuthenticatedSponsorRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
@@ -33,10 +34,7 @@ public class SponsorCreditCardUpdateService implements AbstractUpdateService<Spo
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private SponsorCreditCardRepository		repository;
-
-	@Autowired
-	private AuthenticatedSponsorRepository	repositorySponsor;
+	private SponsorCreditCardRepository repository;
 
 
 	// AbstractUpdateService<Sponsor, CreditCard> interface ---------------
@@ -44,8 +42,18 @@ public class SponsorCreditCardUpdateService implements AbstractUpdateService<Spo
 	@Override
 	public boolean authorise(final Request<CreditCard> request) {
 		assert request != null;
+		boolean result;
+		int creditCardId;
+		CreditCard cc;
+		Sponsor sponsor;
+		Principal principal;
 
-		return true;
+		creditCardId = request.getModel().getInteger("id");
+		cc = this.repository.findOneById(creditCardId);
+		sponsor = cc.getSponsor();
+		principal = request.getPrincipal();
+		result = sponsor.getUserAccount().getId() == principal.getAccountId();
+		return result;
 	}
 
 	@Override
@@ -71,13 +79,10 @@ public class SponsorCreditCardUpdateService implements AbstractUpdateService<Spo
 		assert request != null;
 
 		CreditCard result;
-		Principal principal;
-		int userAccountId;
+		int id;
 
-		principal = request.getPrincipal();
-		userAccountId = principal.getAccountId();
-
-		result = this.repository.findBySponsorId(this.repositorySponsor.findOneSponsorByUserAccountId(userAccountId).getId());
+		id = request.getModel().getInteger("id");
+		result = this.repository.findOneById(id);
 
 		return result;
 	}
@@ -87,6 +92,18 @@ public class SponsorCreditCardUpdateService implements AbstractUpdateService<Spo
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		if (!errors.hasErrors("expirationYear") && !errors.hasErrors("expirationMonth")) {
+			YearMonth ym = YearMonth.now();
+			YearMonth introducido = YearMonth.of(entity.getExpirationYear(), entity.getExpirationMonth());
+			boolean cmp = introducido.isBefore(ym);
+			errors.state(request, !cmp, "expirationYear", "administrator.commercialBanner.error.expiration");
+			errors.state(request, !cmp, "expirationMonth", "administrator.commercialBanner.error.expiration");
+		}
+		if (!errors.hasErrors("cvv")) {
+			boolean rangoCVV = String.valueOf(entity.getCvv()).length() == 3;
+			errors.state(request, rangoCVV, "cvv", "administrator.commercialBanner.error.cvv");
+		}
 	}
 
 	@Override

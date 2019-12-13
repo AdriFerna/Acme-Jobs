@@ -45,7 +45,7 @@
 
     alter table `credit_card` 
        drop 
-       foreign key `FKikyh5cwqvweutoxhvicw1vkn2`;
+       foreign key `FK31l5hvh7p1nx1aw6v649gw3rc`;
 
     alter table `duty` 
        drop 
