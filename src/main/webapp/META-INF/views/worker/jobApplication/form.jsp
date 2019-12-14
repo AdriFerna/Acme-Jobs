@@ -12,6 +12,9 @@
 <acme:form-textarea code="worker.jobApplication.form.label.statement" path="statement"/>
 <acme:form-textarea code="worker.jobApplication.form.label.skills" path="skills"/>
 <acme:form-textarea code="worker.jobApplication.form.label.qualifications" path="qualifications"/>
+<jstl:if test="${status != 'pending' }">
+<acme:form-textarea code="worker.jobApplication.form.label.justification" path="justification"/>
+</jstl:if>
 <jstl:if test="${status == 'pending' }">
 <acme:form-submit test="${command == 'show' }"
 	code="worker.jobApplication.form.button.update"

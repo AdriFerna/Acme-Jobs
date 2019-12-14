@@ -10,6 +10,11 @@ employer.jobApplication.form.label.status = Estado
 employer.jobApplication.form.label.statement = Declaracion
 employer.jobApplication.form.label.skills = Habilidades
 employer.jobApplication.form.label.qualifications = Titulos
+employer.jobApplication.form.label.justification = Justificación
 employer.job.message.job = Ver el trabajo solicitado
+
+employer.jobApplication.form.button.accept = Aceptarla
+employer.jobApplication.form.button.reject = Rechazarla
+employer.jobApplication.error.justification = Debes justificar por qué la estas rechazando (La justificación no puede estar vacía)
 
 autheticated.jobApplication.form.button.return = Volver

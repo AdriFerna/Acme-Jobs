@@ -10,7 +10,12 @@ employer.jobApplication.form.label.status = Status
 employer.jobApplication.form.label.statement = Statement
 employer.jobApplication.form.label.skills = Skills
 employer.jobApplication.form.label.qualifications = Qualifications
+employer.jobApplication.form.label.justification = Justification
 employer.job.message.job = See The Job Applied
+
+employer.jobApplication.form.button.accept = Accept it
+employer.jobApplication.form.button.reject = Reject it
+employer.jobApplication.error.justification = You must justify why you are rejecting it (Justification can't be empty)
 
 
 autheticated.jobApplication.form.button.return = Return
