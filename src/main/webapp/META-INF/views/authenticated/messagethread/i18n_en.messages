@@ -7,3 +7,5 @@ autheticated.messagethread.form.label.title = Title
 autheticated.messagethread.form.label.creationMoment = Creation Moment
 #autheticated.messagethread.form.label.users = Users
 autheticated.messagethread.form.button.return = Return
+
+authenticated.message.message.form.button.create = Add Message

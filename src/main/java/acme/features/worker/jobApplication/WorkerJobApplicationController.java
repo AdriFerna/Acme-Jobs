@@ -1,5 +1,5 @@
 
-package acme.features.worker.job;
+package acme.features.worker.jobApplication;
 
 import javax.annotation.PostConstruct;
 
@@ -23,11 +23,23 @@ public class WorkerJobApplicationController extends AbstractController<Worker, J
 	@Autowired
 	private WorkerJobApplicationShowService		showService;
 
+	@Autowired
+	private WorkerJobApplicationCreateService	createService;
+
+	@Autowired
+	private WorkerJobApplicationUpdateService	updateService;
+
+	@Autowired
+	private WorkerJobApplicationDeleteService	deleteService;
+
 
 	@PostConstruct
 	private void initialise() {
 		super.addCustomCommand(CustomCommand.LIST_MINE, BasicCommand.LIST, this.listMineService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
+		super.addBasicCommand(BasicCommand.CREATE, this.createService);
+		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
+		super.addBasicCommand(BasicCommand.DELETE, this.deleteService);
 	}
 
 }

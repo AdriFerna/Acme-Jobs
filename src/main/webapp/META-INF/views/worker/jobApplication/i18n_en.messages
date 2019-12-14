@@ -10,4 +10,9 @@ worker.jobApplication.form.label.skills = Skills
 worker.jobApplication.form.label.qualifications = Qualifications
 worker.job.message.job = See the Job Applied
 
-autheticated.jobApplication.form.button.return = Return
+worker.jobApplication.form.button.return = Return
+worker.jobApplication.form.button.update = Update
+worker.jobApplication.form.button.delete = Delete
+
+worker.jobApplication.error.referenceNumber = The reference number must be unique
+worker.jobApplication.error.status = You can only delete "pending" job applications

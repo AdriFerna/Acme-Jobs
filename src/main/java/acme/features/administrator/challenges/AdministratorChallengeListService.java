@@ -1,7 +1,10 @@
 
 package acme.features.administrator.challenges;
 
+import java.util.Calendar;
 import java.util.Collection;
+import java.util.Date;
+import java.util.TimeZone;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,10 +41,11 @@ public class AdministratorChallengeListService implements AbstractListService<Ad
 	@Override
 	public Collection<Challenge> findMany(final Request<Challenge> request) {
 		assert request != null;
-
+		Calendar cal = Calendar.getInstance(TimeZone.getDefault());
+		Date ldt = cal.getTime();
 		Collection<Challenge> result;
 
-		result = this.repository.findManyAll();
+		result = this.repository.findManyAll(ldt);
 
 		return result;
 	}

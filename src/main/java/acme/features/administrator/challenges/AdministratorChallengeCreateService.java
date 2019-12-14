@@ -1,7 +1,9 @@
 
 package acme.features.administrator.challenges;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -64,6 +66,9 @@ public class AdministratorChallengeCreateService implements AbstractCreateServic
 		assert errors != null;
 
 		Date date = new Date();
+		Calendar c = Calendar.getInstance(TimeZone.getDefault());
+		c.add(Calendar.DAY_OF_MONTH, 7);
+		date = c.getTime();
 		if (!errors.hasErrors("deadline")) {
 			boolean esAntes = entity.getDeadline().before(date);
 			errors.state(request, !esAntes, "deadline", "administrator.challenge.error.deadline");

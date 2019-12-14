@@ -1,6 +1,8 @@
 employer.jobApplication.list.label.referenceNumber = Numero de referencia
 employer.jobApplication.list.label.qualifications = Titulos
 employer.jobApplication.list.label.jobTitle = Titulo del trabajo
+employer.jobApplication.list.label.status = Estado
+employer.jobApplication.list.label.creationMoment = Momento de creación
 
 employer.jobApplication.form.label.referenceNumber = Numero de referencia
 employer.jobApplication.form.label.creationMoment = Momento de creacion

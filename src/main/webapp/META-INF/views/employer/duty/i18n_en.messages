@@ -3,5 +3,13 @@ employer.duty.list.label.description = Description
 employer.duty.list.label.percentage = Percentage of work per week
 employer.duty.list.label.job.title = Job Title
 employer.duty.form.button.return = Return
-
+employer.duty.form.label.title = Title
+employer.duty.form.label.description = Description
+employer.duty.form.label.percentage = Percentage of work per week
+employer.duty.form.button.create = Create
 employer.duty.message.job = Duties' Job
+
+employer.duty.error.title.spam = The title is considered spam
+employer.duty.error.description.spam =  The Description is considered spam
+employer.job.error.totalDutiesPercentage= The sum of the percentages of work per week exceeds 100%
+employer.duty.error.percentageSuperado = The sum of the percentages of work per week exceeds 100%

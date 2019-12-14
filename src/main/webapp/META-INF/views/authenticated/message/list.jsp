@@ -7,4 +7,8 @@
 	<acme:list-column code="autheticated.message.list.label.title" path="title" width="10%"/>
 	<acme:list-column code="autheticated.message.list.label.tags" path="tags" width="10%"/>
 	<acme:list-column code="autheticated.message.list.label.username" path="user.userAccount.username" width="10%"/>
+	
 </acme:list>
+	
+
+	

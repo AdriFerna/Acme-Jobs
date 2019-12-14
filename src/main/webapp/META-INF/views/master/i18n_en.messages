@@ -65,15 +65,19 @@ master.menu.authenticated.message-thread.list = Message Threads
 master.menu.employer = Employer
 master.menu.employer.job.list = List Jobs
 master.menu.employer.jobApplication.list = List Job Applications
-
+master.menu.employer.job.create = Create a new Job
 # master.menu.worker#######################################################
 master.menu.worker = Worker
+master.menu.employer.jobApplication.list = List Job Applications
+master.menu.employer.job.list = List Jobs
 
 # master.menu.administrator.Display #######################################################
 master.menu.administrator.adminDisplay = Admin Display
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.dashboardJob = Job Dashboard
 master.menu.administrator.customParams = Customisation Parameters
+master.menu.administrator.auditorRequest = List Auditor Requests
+master.menu.administrator.dashboardJobApp = Job Applications Dashboard
 
 
 # master.menu.anonymous.announcements #######################################################s
@@ -148,6 +152,14 @@ master.menu.user-account.sponsor = Sponsor data
 master.menu.user-account.become-sponsor = Become a sponsor
 master.menu.user-account.sponsor.creditCard.list = Credit Card
 
+master.menu.user-account.become-employer = Become a employer
+master.menu.user-account.employer = Employer data
+
+master.menu.user-account.become-worker = Become a worker
+master.menu.user-account.worker = Worker data
+
+master.menu.user-account.become-auditor = Request auditor Role
+
 # master.footer ###############################################################
 
 master.footer.title.about = About us
@@ -162,7 +174,7 @@ master.footer.label.spanish = Spanish
 
 # master.company ##############################################################
 
-master.company.title = La compañía
+master.company.title = The Company
 master.company.text = \
 	Acme-Jobs, Inc. is a fictitious company that provides a \
 	starter project for the students of the Design and Testing subject of the \

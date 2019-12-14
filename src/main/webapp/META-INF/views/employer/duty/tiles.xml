@@ -8,5 +8,9 @@
 		<put-attribute name="body" type="template" value="../employer/duty/list.jsp"/>	
 	</definition>
 	
+		<definition name="employer/duty/form" extends="master">
+		<put-attribute name="body" type="template" value="../employer/duty/form.jsp"/>	
+	</definition>
+	
 	
 </tiles-definitions>

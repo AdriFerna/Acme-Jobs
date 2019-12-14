@@ -44,6 +44,16 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `auditor_request` (
+       `id` integer not null,
+        `version` integer not null,
+        `firm` varchar(255),
+        `statement` varchar(255),
+        `status` bit,
+        `user_id` integer,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `authenticated` (
        `id` integer not null,
         `version` integer not null,
@@ -181,11 +191,13 @@
        `id` integer not null,
         `version` integer not null,
         `creation_moment` datetime(6),
+        `justification` varchar(1024),
         `qualifications` varchar(1024),
         `reference_number` varchar(255),
         `skills` varchar(1024),
         `statement` varchar(1024),
         `status` varchar(255),
+        `update_moment` datetime(6),
         `job_id` integer not null,
         `worker_id` integer not null,
         primary key (`id`)
@@ -345,6 +357,11 @@ create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
     alter table `auditor` 
        add constraint FK_clqcq9lyspxdxcp6o4f3vkelj 
        foreign key (`user_account_id`) 
+       references `user_account` (`id`);
+
+    alter table `auditor_request` 
+       add constraint `FKkn8ax54577bh95khvuyoapv0c` 
+       foreign key (`user_id`) 
        references `user_account` (`id`);
 
     alter table `authenticated` 
