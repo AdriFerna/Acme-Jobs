@@ -498,89 +498,6 @@
 		<property name="ticker" value="OABCD-12345" />
 	</bean>
 	
-	<!-- Commercial Banner -->
-
-	<bean id="commercialbanner01" class="acme.entities.banners.CommercialBanner">
-		<property name="imageurl" value="http://www.imagenes1.com" />
-		<property name="slogan" value="Slogan del banner comercial 01" />
-		<property name="targeturl" value="http://www.targerurl01.com" />
-		<property name="sponsor" ref="Sponsor1" />
-		<property name="creditCard" ref="creditcard01"/>
-	</bean>
-
-	<bean id="commercialbanner02" class="acme.entities.banners.CommercialBanner">
-		<property name="imageurl" value="http://www.imagenes1.com" />
-		<property name="slogan" value="Slogan del banner comercial 02" />
-		<property name="targeturl" value="http://www.targerurl01.com" />
-		<property name="sponsor" ref="Sponsor2" />
-		<property name="creditCard" ref="creditcard02"/>
-	</bean>
-	
-	<!-- Credit Card -->
-	
-	<bean id="creditcard01" class="acme.entities.banners.CreditCard">
-		<property name="cardNumber" value="4376925573423858" />
-		<property name="holder" value="Paco Diaz" />
-		<property name="cvv" value="900" />
-		<property name="brand" value="VISA" />
-		<property name="expirationMonth" value="12" />
-		<property name="expirationYear" value="2019" />
-	</bean>
-
-	<bean id="creditcard02" class="acme.entities.banners.CreditCard">
-		<property name="cardNumber" value="4465307888273140" />
-		<property name="holder" value="Paco Diaz" />
-		<property name="cvv" value="992" />
-		<property name="brand" value="MasterCard" />
-		<property name="expirationMonth" value="12" />
-		<property name="expirationYear" value="2020" />
-	</bean>
-		
-	<bean id="creditcard03" class="acme.entities.banners.CreditCard">
-		<property name="cardNumber" value="4123082495348825" />
-		<property name="holder" value="Elizabeth Hernandez" />
-		<property name="cvv" value="321" />
-		<property name="brand" value="Visa" />
-		<property name="expirationMonth" value="06" />
-		<property name="expirationYear" value="2024" />
-	</bean>
-	
-	<bean id="creditcard04" class="acme.entities.banners.CreditCard">
-		<property name="cardNumber" value="4940340389540035" />
-		<property name="holder" value="Juana Martínez" />
-		<property name="cvv" value="830" />
-		<property name="brand" value="Visa" />
-		<property name="expirationMonth" value="12" />
-		<property name="expirationYear" value="2022" />
-	</bean>
-	
-	<!-- Non Commercial Banner -->
-
-	<bean id="noncommercialbanner01" class="acme.entities.banners.NonCommercialBanner">
-		<property name="imageurl" value="http://www.imagenesnocomerciales1.com" />
-		<property name="slogan" value="Slogan del banner no comercial 01" />
-		<property name="targeturl" value="http://www.targerurlnocomercial01.com" />
-		<property name="sponsor" ref="Sponsor1" />
-		<property name="jingleurl" value="http://www.jingleurl01.com" />
-	</bean>
-
-	<bean id="noncommercialbanner02" class="acme.entities.banners.NonCommercialBanner">
-		<property name="imageurl" value="http://www.imagenesnocomerciales2.com" />
-		<property name="slogan" value="Slogan del banner no comercial 02" />
-		<property name="targeturl" value="http://www.targerurlnocomercial02.com" />
-		<property name="sponsor" ref="Sponsor2" />
-		<property name="jingleurl" value="http://www.jingleurl02.com" />
-	</bean>
-
-	<bean id="noncommercialbanner03" class="acme.entities.banners.NonCommercialBanner">
-		<property name="imageurl" value="http://www.imagenesnocomerciales3.com" />
-		<property name="slogan" value="Slogan del banner no comercial 03" />
-		<property name="targeturl" value="http://www.targerurlnocomercial03.com" />
-		<property name="sponsor" ref="Sponsor1" />
-		<property name="jingleurl" value="http://www.jingleurl03.com">
-		</property>
-	</bean>
-	
 	<!-- Sponsor Account -->
 
 	<bean id="SponsorUserAccount1" class="acme.framework.entities.UserAccount">
@@ -605,7 +522,6 @@
 	<bean id="Sponsor1" class="acme.entities.roles.Sponsor">
 		<property name="organisationName" value="Organisation Sponsor 1, Inc." />
 		<property name="userAccount" ref="SponsorUserAccount1" />
-		<property name="creditCard" ref="creditcard03"/>
 	</bean>
 
 	<bean id="SponsorAuthenticated1" class="acme.framework.entities.Authenticated">
@@ -636,11 +552,157 @@
 	<bean id="Sponsor2" class="acme.entities.roles.Sponsor">
 		<property name="organisationName" value="Organisation Sponsor 2, Inc." />
 		<property name="userAccount" ref="SponsorUserAccount2" />
-		<property name="creditCard" ref="creditcard03"/>
 	</bean>
 
 	<bean id="SponsorAuthenticated2" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="SponsorUserAccount2" />
+	</bean>
+	
+	<!-- ........................................................................................ -->
+	
+	<bean id="SponsorUserAccount3" class="acme.framework.entities.UserAccount">
+		<property name="username" value="sponsor3" />
+		<property name="password" value="sponsor3" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Sponsor3" />
+				<property name="surname" value="Sponsor" />
+				<property name="email" value="sponsor3@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="Sponsor3" />
+				<ref bean="SponsorAuthenticated2" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="Sponsor3" class="acme.entities.roles.Sponsor">
+		<property name="organisationName" value="Organisation Sponsor 3, Inc." />
+		<property name="userAccount" ref="SponsorUserAccount3" />
+	</bean>
+
+	<bean id="SponsorAuthenticated3" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="SponsorUserAccount3" />
+	</bean>
+	
+	<!-- ........................................................................................ -->
+	
+	<bean id="SponsorUserAccount4" class="acme.framework.entities.UserAccount">
+		<property name="username" value="sponsor4" />
+		<property name="password" value="sponsor4" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Sponsor4" />
+				<property name="surname" value="Sponsor" />
+				<property name="email" value="sponsor4@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="Sponsor4" />
+				<ref bean="SponsorAuthenticated2" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="Sponsor4" class="acme.entities.roles.Sponsor">
+		<property name="organisationName" value="Organisation Sponsor 4, Inc." />
+		<property name="userAccount" ref="SponsorUserAccount4" />
+	</bean>
+
+	<bean id="SponsorAuthenticated4" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="SponsorUserAccount4" />
+	</bean>
+	
+	<!-- Commercial Banner -->
+
+	<bean id="commercialbanner01" class="acme.entities.banners.CommercialBanner">
+		<property name="imageurl" value="http://www.imagenes1.com" />
+		<property name="slogan" value="Slogan del banner comercial 01" />
+		<property name="targeturl" value="http://www.targerurl01.com" />
+		<property name="sponsor" ref="Sponsor1" />
+		<property name="creditCard" ref="creditcard01"/>
+	</bean>
+
+	<bean id="commercialbanner02" class="acme.entities.banners.CommercialBanner">
+		<property name="imageurl" value="http://www.imagenes1.com" />
+		<property name="slogan" value="Slogan del banner comercial 02" />
+		<property name="targeturl" value="http://www.targerurl01.com" />
+		<property name="sponsor" ref="Sponsor2" />
+		<property name="creditCard" ref="creditcard02"/>
+	</bean>
+	
+	<!-- Credit Card -->
+	
+	<bean id="creditcard01" class="acme.entities.banners.CreditCard">
+		<property name="cardNumber" value="4376925573423858" />
+		<property name="holder" value="Paco Diaz" />
+		<property name="cvv" value="900" />
+		<property name="brand" value="VISA" />
+		<property name="expirationMonth" value="12" />
+		<property name="expirationYear" value="2019" />
+		<property name="sponsor" ref="Sponsor1" />
+	</bean>
+
+	<bean id="creditcard02" class="acme.entities.banners.CreditCard">
+		<property name="cardNumber" value="4465307888273140" />
+		<property name="holder" value="Paco Diaz" />
+		<property name="cvv" value="992" />
+		<property name="brand" value="MasterCard" />
+		<property name="expirationMonth" value="12" />
+		<property name="expirationYear" value="2020" />
+		<property name="sponsor" ref="Sponsor2" />
+	</bean>
+		
+	<bean id="creditcard03" class="acme.entities.banners.CreditCard">
+		<property name="cardNumber" value="4123082495348825" />
+		<property name="holder" value="Elizabeth Hernandez" />
+		<property name="cvv" value="321" />
+		<property name="brand" value="Visa" />
+		<property name="expirationMonth" value="06" />
+		<property name="expirationYear" value="2024" />
+		<property name="sponsor" ref="Sponsor3" />
+	</bean>
+	
+	<bean id="creditcard04" class="acme.entities.banners.CreditCard">
+		<property name="cardNumber" value="4940340389540035" />
+		<property name="holder" value="Juana Martínez" />
+		<property name="cvv" value="830" />
+		<property name="brand" value="Visa" />
+		<property name="expirationMonth" value="12" />
+		<property name="expirationYear" value="2022" />
+		<property name="sponsor" ref="Sponsor4" />
+	</bean>
+	
+	<!-- Non Commercial Banner -->
+
+	<bean id="noncommercialbanner01" class="acme.entities.banners.NonCommercialBanner">
+		<property name="imageurl" value="http://www.imagenesnocomerciales1.com" />
+		<property name="slogan" value="Slogan del banner no comercial 01" />
+		<property name="targeturl" value="http://www.targerurlnocomercial01.com" />
+		<property name="sponsor" ref="Sponsor1" />
+		<property name="jingleurl" value="http://www.jingleurl01.com" />
+	</bean>
+
+	<bean id="noncommercialbanner02" class="acme.entities.banners.NonCommercialBanner">
+		<property name="imageurl" value="http://www.imagenesnocomerciales2.com" />
+		<property name="slogan" value="Slogan del banner no comercial 02" />
+		<property name="targeturl" value="http://www.targerurlnocomercial02.com" />
+		<property name="sponsor" ref="Sponsor2" />
+		<property name="jingleurl" value="http://www.jingleurl02.com" />
+	</bean>
+
+	<bean id="noncommercialbanner03" class="acme.entities.banners.NonCommercialBanner">
+		<property name="imageurl" value="http://www.imagenesnocomerciales3.com" />
+		<property name="slogan" value="Slogan del banner no comercial 03" />
+		<property name="targeturl" value="http://www.targerurlnocomercial03.com" />
+		<property name="sponsor" ref="Sponsor1" />
+		<property name="jingleurl" value="http://www.jingleurl03.com">
+		</property>
 	</bean>
 	
 	<!-- Auditor Account -->
