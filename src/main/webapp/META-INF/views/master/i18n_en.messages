@@ -103,11 +103,11 @@ master.menu.administrator.investorRecord.list = Investors List (ADMIN)
 master.menu.administrator.investorRecord.create = Create Investor
 master.menu.administrator.shutdown = Shut down
 
-master.menu.administrator.commercialBanner.list = Commercial Banner List
-master.menu.administrator.commercialBanner.create = Commercial Banner Create
+master.menu.administrator.commercialBanner.list = List Commercial Banner
+master.menu.administrator.commercialBanner.create = Create Commercial Banner
 
-master.menu.administrator.nonCommercialBanner.list = Non Commercial Banner List
-master.menu.administrator.nonCommercialBanner.create = Non Commercial Banner Create
+master.menu.administrator.nonCommercialBanner.list = List Non Commercial Banner
+master.menu.administrator.nonCommercialBanner.create = Create Non Commercial Banner
 
 # master.menu.provider ########################################################
 
@@ -131,8 +131,11 @@ master.menu.consumer.offer.create = Create Offer
 # master.menu.sponsor ##########################################################
 
 master.menu.sponsor = Sponsor
+master.menu.sponsor.commercialBanner.create = Commercial Banner Create
 master.menu.sponsor.commercialBanner = Commercial Banner List
+master.menu.sponsor.nonCommercialBanner.create = Non Commercial Banner Create
 master.menu.sponsor.nonCommercialBanner = Non Commercial Banner List
+master.menu.sponsor.creditCard.list = List Credit Card
 
 # master.menu.auditor ##########################################################
 
@@ -150,7 +153,6 @@ master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
 master.menu.user-account.sponsor = Sponsor data
 master.menu.user-account.become-sponsor = Become a sponsor
-master.menu.user-account.sponsor.creditCard.list = Credit Card
 
 master.menu.user-account.become-employer = Become a employer
 master.menu.user-account.employer = Employer data

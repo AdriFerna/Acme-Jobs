@@ -14,16 +14,22 @@
 
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
-<acme:form readonly="true">
+<acme:form>
 	<acme:form-textbox code="sponsor.commercialBanner.form.label.slogan" path="slogan"/>
 	<acme:form-url code="sponsor.commercialBanner.form.label.imageurl" path="imageurl"/>
 	<acme:form-url code="sponsor.commercialBanner.form.label.targeturl" path="targeturl"/>
-	<acme:form-integer placeholder="5380724565863291" code="administrator.commercialBanner.form.label.cardNumber" path="creditCard.cardNumber"/>
-	<acme:form-textbox code="sponsor.commercialBanner.form.label.holder" path="creditCard.holder"/>
-	<acme:form-integer code="sponsor.commercialBanner.form.label.cvv" path="creditCard.cvv"/>
-	<acme:form-textbox code="sponsor.commercialBanner.form.label.brand" path="creditCard.brand"/>
-	<acme:form-integer code="sponsor.commercialBanner.form.label.expirationMonth" path="creditCard.expirationMonth"/>
-	<acme:form-integer code="sponsor.commercialBanner.form.label.expirationYear" path="creditCard.expirationYear"/>
+	
+	<acme:form-select code="sponsor.commercialBanner.form.select.creditCard" path="creditCardId">
+		<jstl:forEach items="${creditCard}" var="item"> 
+			<acme:form-option code="${item.cardNumber}" value="${item.id}"/>
+		</jstl:forEach>
+	</acme:form-select>
+
+	<acme:form-submit test="${command == 'create' }" code="sponsor.commercialBanner.form.button.create" action="/sponsor/commercial-banner/create"/>
+	<acme:form-submit test="${command == 'show' }" code="sponsor.commercialBanner.form.button.update" action="/sponsor/commercial-banner/update"/>
+	<acme:form-submit test="${command == 'update' }" code="sponsor.commercialBanner.form.button.update" action="/sponsor/commercial-banner/update"/>
+	<acme:form-submit test="${command == 'show' }" code="sponsor.commercialBanner.form.button.delete" action="/sponsor/commercial-banner/delete"/>
+	<acme:form-submit test="${command == 'delete' }" code="sponsor.commercialBanner.form.button.delete" action="/sponsor/commercial-banner/delete"/>
 
 	<acme:form-return code="sponsor.commercialBanner.form.button.return"/>
 </acme:form>

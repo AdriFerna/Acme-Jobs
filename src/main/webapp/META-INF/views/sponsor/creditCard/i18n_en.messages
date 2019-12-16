@@ -21,3 +21,6 @@ sponsor.creditCard.list.label.brand = Brand
 sponsor.creditCard.form.button.create = Create
 sponsor.creditCard.form.button.update = Update
 sponsor.creditCard.form.button.return = Return
+
+sponsor.creditCard.error.cvv = CVV must have 3 digits
+sponsor.creditCard.error.expiration = The expiration date is in the past
