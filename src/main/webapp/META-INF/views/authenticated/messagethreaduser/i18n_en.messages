@@ -4,7 +4,6 @@ autheticated.messagethread.list.label.ownerId = Owner ID
 
 authenticated.messagethread.message.users = Users in the Thread ((Username) | Name, Surname)
 authenticated.message.message.message  = Show the messages of the Thread
-authenticated.message.message.user  = Show the Users of the Thread
 autheticated.messagethread.form.label.title = Title
 autheticated.messagethread.form.label.creationMoment = Creation Moment
 autheticated.messagethread.form.label.ownerId = Owner ID

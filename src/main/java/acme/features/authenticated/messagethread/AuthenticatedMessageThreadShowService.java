@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.message;
+package acme.features.authenticated.messagethread;
 
 import java.util.List;
 
@@ -44,7 +44,7 @@ public class AuthenticatedMessageThreadShowService implements AbstractShowServic
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "creationMoment");
+		request.unbind(entity, model, "title", "creationMoment", "ownerId");
 
 		List<Integer> usersOnTheThread = this.repository.findUsersOnTheThread(request.getModel().getInteger("id"));
 		String[][] datafromUsers = this.repository.findDataFromUsers(usersOnTheThread);
