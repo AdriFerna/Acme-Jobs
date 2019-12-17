@@ -5,11 +5,13 @@
 
 
 <acme:form>
+<jstl:if test="${command == 'create' }">
 	<acme:form-textbox code="autheticated.messagethread.form.label.title" path="title" />
-	<acme:form-textbox code="autheticated.messagethread.form.label.ownerId" path="ownerId" />
-	
+</jstl:if>	
+
 	<jstl:if test="${command != 'create'}">
-		<acme:form-moment code="autheticated.messagethread.list.label.creationMoment" path="creationMoment"/>
+	<acme:form-textbox code="autheticated.messagethread.form.label.title" path="title" readonly="true" />
+		<acme:form-moment  readonly="true" code="autheticated.messagethread.list.label.creationMoment" path="creationMoment"/>
 		
 		<acme:message code="authenticated.messagethread.message.users"></acme:message>
 		<br>
@@ -18,15 +20,22 @@
 			<br>
 		
 			</jstl:forEach>
+		<acme:form-submit method="get" code="authenticated.message.message.message" action="/authenticated/message/list?idThread=${id}"/>
+		
+	<acme:form-submit code="authenticated.message.message.form.button.create" action="/authenticated/message/create?idThread=${id}"
+	method="get"/>
+
+ <acme:form-submit
+test = "${owner.id == authId}" 
+  code="authenticated.message.message.user" action="/authenticated/authenticated-message-thread/add?idThread=${id}"
+	method="get"/>
 	
-		<a href = /acme-jobs/authenticated/message/list?idThread=<jstl:out value="${id}"></jstl:out>>
-			<acme:message code="authenticated.message.message.message"/>
-		</a>
-		
-		<a href = /acme-jobs/authenticated/message-thread-user/list?idThread=<jstl:out value="${id}"></jstl:out>>
-			<acme:message code="authenticated.message.message.user"/>
-		</a>
-		
+	 <acme:form-submit
+test = "${owner.id == authId}" 
+  code="authenticated.message.message.user.delete" action="/authenticated/authenticated-message-thread/delete?idThread=${id}"
+	method="get"/>
+
+ 
 		<br>
 	</jstl:if>
 	

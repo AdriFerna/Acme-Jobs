@@ -18,11 +18,10 @@
 	<acme:form-textbox code="sponsor.commercialBanner.form.label.slogan" path="slogan"/>
 	<acme:form-url code="sponsor.commercialBanner.form.label.imageurl" path="imageurl"/>
 	<acme:form-url code="sponsor.commercialBanner.form.label.targeturl" path="targeturl"/>
-	
 	<acme:form-select code="sponsor.commercialBanner.form.select.creditCard" path="creditCardId">
-		<jstl:forEach items="${creditCard}" var="item"> 
-			<acme:form-option code="${item.cardNumber}" value="${item.id}"/>
-		</jstl:forEach>
+		<jstl:forEach items="${creditCard}" var="item">
+	<acme:form-option   code="${item.cardNumber}" value="${item.id}"/>
+	</jstl:forEach>
 	</acme:form-select>
 
 	<acme:form-submit test="${command == 'create' }" code="sponsor.commercialBanner.form.button.create" action="/sponsor/commercial-banner/create"/>

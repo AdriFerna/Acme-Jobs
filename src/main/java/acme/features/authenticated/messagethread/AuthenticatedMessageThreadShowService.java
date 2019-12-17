@@ -44,11 +44,13 @@ public class AuthenticatedMessageThreadShowService implements AbstractShowServic
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "creationMoment", "ownerId");
+		request.unbind(entity, model, "title", "creationMoment", "owner");
 
 		List<Integer> usersOnTheThread = this.repository.findUsersOnTheThread(request.getModel().getInteger("id"));
 		String[][] datafromUsers = this.repository.findDataFromUsers(usersOnTheThread);
 		model.setAttribute("usersData", datafromUsers);
+		model.setAttribute("authId", request.getPrincipal().getActiveRoleId());
+		//model.setAttribute("owner", entity.getOwner().getId());
 	}
 
 	@Override

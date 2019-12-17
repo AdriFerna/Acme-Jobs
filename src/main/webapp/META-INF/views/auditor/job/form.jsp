@@ -26,7 +26,7 @@
 <acme:form-submit  test ="${command != 'create'}"  
 	code="auditor.job.form.button.create.auditRecord"
 	method="get"
-	action= "/auditor/auditRecord/create?idJob=${id}"
+	action= "/auditor/audit-record/create?idJob=${id}"
 />
 
 

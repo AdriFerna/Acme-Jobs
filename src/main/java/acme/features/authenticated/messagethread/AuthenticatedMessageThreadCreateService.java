@@ -17,14 +17,12 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.messages.AuthenticatedMessageThread;
 import acme.entities.messages.MessageThread;
 import acme.framework.components.Errors;
-import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.components.Response;
 import acme.framework.entities.Authenticated;
-import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractCreateService;
 
 @Service
@@ -69,9 +67,10 @@ public class AuthenticatedMessageThreadCreateService implements AbstractCreateSe
 
 		MessageThread result;
 		Date creationMoment = new Date();
-
+		Authenticated owner = this.repository.findOneAuthenticatedById(request.getPrincipal().getActiveRoleId());
 		result = new MessageThread();
 		result.setCreationMoment(creationMoment);
+		result.setOwner(owner);
 
 		return result;
 	}
@@ -86,20 +85,13 @@ public class AuthenticatedMessageThreadCreateService implements AbstractCreateSe
 	@Override
 	public void create(final Request<MessageThread> request, final MessageThread entity) {
 		Date creationMoment;
-
+		AuthenticatedMessageThread amt = new AuthenticatedMessageThread();
+		amt.setThread(entity);
+		amt.setUser(entity.getOwner());
 		creationMoment = new Date(System.currentTimeMillis() - 1);
 		entity.setCreationMoment(creationMoment);
 		this.repository.save(entity);
-	}
-
-	@Override
-	public void onSuccess(final Request<MessageThread> request, final Response<MessageThread> response) {
-		assert request != null;
-		assert response != null;
-
-		if (request.isMethod(HttpMethod.POST)) {
-			PrincipalHelper.handleUpdate();
-		}
+		this.repository.save(amt);
 	}
 
 }

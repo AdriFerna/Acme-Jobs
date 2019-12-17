@@ -1,21 +1,33 @@
 
 package acme.features.sponsor.banner.commercialBanner;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.banners.CommercialBanner;
+import acme.entities.banners.CreditCard;
 import acme.entities.roles.Sponsor;
+import acme.features.authenticated.sponsor.AuthenticatedSponsorRepository;
+import acme.features.sponsor.creditCard.SponsorCreditCardRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractDeleteService;
 
 @Service
 public class SponsorCommercialBannerDeleteService implements AbstractDeleteService<Sponsor, CommercialBanner> {
 
 	@Autowired
-	SponsorCommercialBannerRepository repository;
+	SponsorCommercialBannerRepository	repository;
+
+	@Autowired
+	SponsorCreditCardRepository			repositoryCreditCard;
+
+	@Autowired
+	AuthenticatedSponsorRepository		repositorySponsor;
 
 
 	@Override
@@ -31,6 +43,17 @@ public class SponsorCommercialBannerDeleteService implements AbstractDeleteServi
 		assert entity != null;
 		assert errors != null;
 
+		Principal principal;
+		int userAccountId;
+		Sponsor sponsor;
+
+		principal = request.getPrincipal();
+		userAccountId = principal.getAccountId();
+		sponsor = this.repositorySponsor.findOneSponsorByUserAccountId(userAccountId);
+
+		Collection<CreditCard> cards = this.repositoryCreditCard.findBySponsorId(sponsor.getId());
+		request.getModel().setAttribute("creditCard", cards);
+
 		request.bind(entity, errors);
 	}
 
@@ -40,7 +63,7 @@ public class SponsorCommercialBannerDeleteService implements AbstractDeleteServi
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "slogan", "imageurl", "targeturl", "creditCard");
+		request.unbind(entity, model, "slogan", "imageurl", "targeturl", "creditCard.id");
 	}
 
 	@Override

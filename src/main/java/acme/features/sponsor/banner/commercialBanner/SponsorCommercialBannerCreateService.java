@@ -74,15 +74,22 @@ public class SponsorCommercialBannerCreateService implements AbstractCreateServi
 		CommercialBanner result;
 		Principal principal;
 		int userAccountId;
-		Sponsor sponsor;
-		CreditCard creditCard;
-
 		principal = request.getPrincipal();
 		userAccountId = principal.getAccountId();
+		Sponsor sponsor;
 		sponsor = this.repositorySponsor.findOneSponsorByUserAccountId(userAccountId);
+		CreditCard creditCard = new CreditCard();
+		creditCard.setBrand("VISA");
+		creditCard.setCardNumber("6011396602603793");
+		creditCard.setCvv(999);
+		creditCard.setExpirationMonth(12);
+		creditCard.setExpirationYear(2020);
+		creditCard.setHolder("John");
+		creditCard.setSponsor(sponsor);
 
 		result = new CommercialBanner();
 		result.setSponsor(sponsor);
+		result.setCreditCard(creditCard);
 
 		Collection<CreditCard> cards = this.repositoryCreditCard.findBySponsorId(sponsor.getId());
 		request.getModel().setAttribute("creditCard", cards);
@@ -96,6 +103,8 @@ public class SponsorCommercialBannerCreateService implements AbstractCreateServi
 		assert entity != null;
 		assert errors != null;
 
+		boolean countCreditCards = this.repository.countCreditCardsOfSponsor(request.getPrincipal().getActiveRoleId()) > 0;
+		errors.state(request, countCreditCards, "creditCardId", "sponsor.commercialbanner.nocreditcard.error");
 	}
 
 	@Override

@@ -7,7 +7,7 @@ sponsor.commercialBanner.form.label.slogan = Slogan
 sponsor.commercialBanner.form.label.imageurl = Image URL
 sponsor.commercialBanner.form.label.targeturl = Target URL
 sponsor.commercialBanner.form.select.creditCard = Credit Card
-
+sponsor.commercialbanner.nocreditcard.error = You need a Credit Card to create a Commercial Banner
 sponsor.commercialBanner.form.button.create = Create
 sponsor.commercialBanner.form.button.update = Update
 sponsor.commercialBanner.form.button.delete = Delete

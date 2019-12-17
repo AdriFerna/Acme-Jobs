@@ -61,6 +61,7 @@ master.menu.authenticated.job.list = Lista de Trabajos
 
 # master.menu.authenticated.message-thread #######################################################
 master.menu.authenticated.message-thread.list = Hilos de Mensajes
+master.menu.authenticated.message-thread.create = Crear Hilo de Mensajes
 
 # master.menu.employer #######################################################
 master.menu.employer = Empleador
@@ -127,7 +128,7 @@ master.menu.consumer.offer.create = Crear oferta
 master.menu.sponsor = Patrocinador
 master.menu.sponsor.commercialBanner.create = Crear Banners Comerciales
 master.menu.sponsor.commercialBanner = Lista Banners Comerciales
-master.menu.sponsor.commercialBanner.create = Crear Banners No Comerciales
+master.menu.sponsor.nonCommercialBanner.create = Crear Banners No Comerciales
 master.menu.sponsor.nonCommercialBanner = Lista Banners No Comerciales
 master.menu.sponsor.creditCard.list = Lista Tarjeta de Crédito
 

@@ -1,13 +1,8 @@
-autheticated.messagethread.list.label.title = Title
-autheticated.messagethread.list.label.creationMoment = Creation Moment
-autheticated.messagethread.list.label.ownerId = Owner ID
+autheticated.messagethread.form.noMoreUsers = There are no more users that can be added to the thread
+authenticated.messagethread.form.usersToAdd = Select the user to add
+autheticated.messagethread.form.button.addUser = Add User
 
-authenticated.messagethread.message.users = Users in the Thread ((Username) | Name, Surname)
-authenticated.message.message.message  = Show the messages of the Thread
-autheticated.messagethread.form.label.title = Title
-autheticated.messagethread.form.label.creationMoment = Creation Moment
-autheticated.messagethread.form.label.ownerId = Owner ID
-#autheticated.messagethread.form.label.users = Users
-
-authenticated.messagethread.form.button.create = Create
+autheticated.messagethread.form.noMoreUsersToRemove = There are no more users that can be removed from the thread
+authenticated.messagethread.form.usersToRemove = Select the user to remove
+autheticated.messagethread.form.button.deleteUser = Remove user
 autheticated.messagethread.form.button.return = Return

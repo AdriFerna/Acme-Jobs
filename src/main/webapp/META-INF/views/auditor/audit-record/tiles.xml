@@ -4,12 +4,12 @@
 	"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
-	<definition name="auditor/auditRecord/form" extends="master">
-		<put-attribute name="body" type="template" value="../auditor/auditRecord/form.jsp"/>	
+	<definition name="auditor/audit-record/form" extends="master">
+		<put-attribute name="body" type="template" value="../auditor/audit-record/form.jsp"/>	
 	</definition>
 	
-	<definition name="auditor/auditRecord/list" extends="master">
-		<put-attribute name="body" type="template" value="../auditor/auditRecord/list.jsp"/>	
+	<definition name="auditor/audit-record/list" extends="master">
+		<put-attribute name="body" type="template" value="../auditor/audit-record/list.jsp"/>	
 	</definition>
 	
 	

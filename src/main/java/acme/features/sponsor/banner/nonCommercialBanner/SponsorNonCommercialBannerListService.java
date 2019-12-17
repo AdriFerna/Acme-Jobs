@@ -47,7 +47,7 @@ public class SponsorNonCommercialBannerListService implements AbstractListServic
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "slogan", "imageurl");
+		request.unbind(entity, model, "slogan", "targeturl");
 	}
 
 }

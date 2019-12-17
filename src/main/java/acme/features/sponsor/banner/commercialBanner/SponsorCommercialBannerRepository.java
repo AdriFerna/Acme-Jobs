@@ -21,4 +21,7 @@ public interface SponsorCommercialBannerRepository extends AbstractRepository {
 	@Query("select s from CommercialBanner s")
 	Collection<CommercialBanner> findMany();
 
+	@Query("select count(a) from CreditCard a where a.sponsor.id = ?1")
+	int countCreditCardsOfSponsor(int id);
+
 }

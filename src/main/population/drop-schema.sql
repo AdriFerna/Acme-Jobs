@@ -79,6 +79,10 @@
        drop 
        foreign key `FKik4epe9dp5q6uenarfyia7xin`;
 
+    alter table `message_thread` 
+       drop 
+       foreign key `FKljabur1weonvmg511atm2ql6`;
+
     alter table `non_commercial_banner` 
        drop 
        foreign key FK_2l8gpcwh19e7jj513or4r9dvb;

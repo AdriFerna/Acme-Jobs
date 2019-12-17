@@ -40,7 +40,7 @@ public class SponsorNonCommercialBannerCreateService implements AbstractCreateSe
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "slogan", "imageurl");
+		request.unbind(entity, model, "slogan", "imageurl", "targeturl", "jingleurl");
 	}
 
 	@Override
@@ -48,8 +48,10 @@ public class SponsorNonCommercialBannerCreateService implements AbstractCreateSe
 		assert request != null;
 
 		NonCommercialBanner result;
+		Sponsor s = this.repository.findSponsorById(request.getPrincipal().getActiveRoleId());
 
 		result = new NonCommercialBanner();
+		result.setSponsor(s);
 
 		return result;
 	}

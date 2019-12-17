@@ -63,7 +63,7 @@ public class SponsorCommercialBannerShowService implements AbstractShowService<S
 		Collection<CreditCard> cards = this.repositoryCreditCard.findBySponsorId(sponsor.getId());
 		model.setAttribute("creditCard", cards);
 
-		request.unbind(entity, model, "slogan", "imageurl", "targeturl");
+		request.unbind(entity, model, "slogan", "imageurl", "targeturl", "creditCard.cardNumber");
 	}
 
 	@Override

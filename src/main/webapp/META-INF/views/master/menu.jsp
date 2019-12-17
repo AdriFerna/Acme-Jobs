@@ -123,7 +123,7 @@
 			
 			<acme:menu-suboption code="master.menu.auditor.jobAudited" action="/auditor/job/list_audited"/>
 			<acme:menu-suboption code="master.menu.auditor.jobNoAudited" action="/auditor/job/list_no_audited"/>
-			<acme:menu-suboption code="master.menu.auditor.auditRecord" action="/auditor/auditRecord/list"/>
+			<acme:menu-suboption code="master.menu.auditor.auditRecord" action="/auditor/audit-record/list_mine"/>
 		</acme:menu-option>
 		
 	</acme:menu-left>
