@@ -60,6 +60,7 @@ master.menu.authenticated.job.list = List Jobs
 
 # master.menu.authenticated.message-thread #######################################################
 master.menu.authenticated.message-thread.list = Message Threads
+master.menu.authenticated.message-thread.create = Create Message Threads
 
 # master.menu.employer#######################################################
 master.menu.employer = Employer
@@ -142,6 +143,7 @@ master.menu.sponsor.creditCard.list = List Credit Card
 master.menu.auditor = Auditor
 master.menu.auditor.jobAudited = Job audited
 master.menu.auditor.jobNoAudited = Job No audited
+master.menu.auditor.auditRecord = List AuditRecord
 
 # master.menu.user-account ####################################################
 

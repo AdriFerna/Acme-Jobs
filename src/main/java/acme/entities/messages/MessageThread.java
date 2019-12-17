@@ -35,19 +35,9 @@ public class MessageThread extends DomainEntity {
 
 	// Relationships ----------------------------------------------------------
 
-	/*
-	 * @NotNull
-	 * 
-	 * @Valid
-	 * 
-	 * @ManyToMany(mappedBy = "messagethreads")
-	 * private Collection<Authenticated> users;
-	 * 
-	 * @NotNull
-	 * 
-	 * @Valid
-	 * 
-	 * @OneToMany()
-	 * private Message message;
-	 */
+	@NotNull
+	//	@Valid
+	//	@ManyToOne(optional = false)
+	private String				ownerId;
+
 }
