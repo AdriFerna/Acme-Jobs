@@ -15,11 +15,15 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<acme:form readonly="true">
+<acme:form>
 	<acme:form-textbox code="sponsor.nonCommercialBanner.form.label.slogan" path="slogan"/>
 	<acme:form-url code="sponsor.nonCommercialBanner.form.label.imageurl" path="imageurl"/>
 	<acme:form-url code="sponsor.nonCommercialBanner.form.label.targeturl" path="targeturl"/>
 	<acme:form-url code="sponsor.nonCommercialBanner.form.label.jingleurl" path="jingleurl"/>
+	
+	<acme:form-submit test="${command == 'create' }" code="sponsor.nonCommercialBanner.form.button.create" action="/sponsor/non-commercial-banner/create"/>
+	<acme:form-submit test="${command == 'show' }" code="sponsor.nonCommercialBanner.form.button.update" action="/sponsor/non-commercial-banner/update"/>
+	<acme:form-submit test="${command == 'show' }" code="sponsor.nonCommercialBanner.form.button.delete" action="/sponsor/non-commercial-banner/delete"/>
 	
 	<acme:form-return code="sponsor.nonCommercialBanner.form.button.return"/>
 </acme:form>

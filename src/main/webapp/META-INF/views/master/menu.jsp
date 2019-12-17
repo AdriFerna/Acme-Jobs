@@ -110,8 +110,13 @@
 		
 		<acme:menu-option code="master.menu.sponsor" access="hasRole('Sponsor')">
 			<%-- <acme:menu-suboption code="master.menu.sponsor.favourite-link" action="http://www.example.com/"/> --%>
+			<acme:menu-suboption code="master.menu.sponsor.commercialBanner.create" action="/sponsor/commercial-banner/create"/>
 			<acme:menu-suboption code="master.menu.sponsor.commercialBanner" action="/sponsor/commercial-banner/list_mine"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.sponsor.nonCommercialBanner.create" action="/sponsor/non-commercial-banner/create"/>
 			<acme:menu-suboption code="master.menu.sponsor.nonCommercialBanner" action="/sponsor/non-commercial-banner/list_mine"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.sponsor.creditCard.list" action="/sponsor/credit-card/list" />
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.auditor" access="hasRole('Auditor')">
@@ -146,7 +151,6 @@
       
       <acme:menu-suboption code="master.menu.user-account.become-sponsor" action="/authenticated/sponsor/create" access="!hasRole('Sponsor')"/>
 			<acme:menu-suboption code="master.menu.user-account.sponsor" action="/authenticated/sponsor/update" access="hasRole('Sponsor')"/>
-			<acme:menu-suboption code="master.menu.user-account.sponsor.creditCard.list" action="/sponsor/credit-card/list" access="hasRole('Sponsor')"/>
 
 		</acme:menu-option>
 

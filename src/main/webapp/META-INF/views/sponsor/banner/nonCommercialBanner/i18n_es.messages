@@ -8,4 +8,7 @@ sponsor.nonCommercialBanner.form.label.imageurl = URL Imagen
 sponsor.nonCommercialBanner.form.label.targeturl = URL Destino
 sponsor.nonCommercialBanner.form.label.jingleurl = URL Música
 
+sponsor.nonCommercialBanner.form.button.create = Crear
+sponsor.nonCommercialBanner.form.button.update = Actualizar
+sponsor.nonCommercialBanner.form.button.delete = Borrar
 sponsor.nonCommercialBanner.form.button.return = Volver

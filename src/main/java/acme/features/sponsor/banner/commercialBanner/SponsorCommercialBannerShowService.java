@@ -1,11 +1,16 @@
 
 package acme.features.sponsor.banner.commercialBanner;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.banners.CommercialBanner;
+import acme.entities.banners.CreditCard;
 import acme.entities.roles.Sponsor;
+import acme.features.authenticated.sponsor.AuthenticatedSponsorRepository;
+import acme.features.sponsor.creditCard.SponsorCreditCardRepository;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Principal;
@@ -15,7 +20,13 @@ import acme.framework.services.AbstractShowService;
 public class SponsorCommercialBannerShowService implements AbstractShowService<Sponsor, CommercialBanner> {
 
 	@Autowired
-	private SponsorCommercialBannerRepository repository;
+	private SponsorCommercialBannerRepository	repository;
+
+	@Autowired
+	SponsorCreditCardRepository					repositoryCreditCard;
+
+	@Autowired
+	AuthenticatedSponsorRepository				repositorySponsor;
 
 
 	@Override
@@ -41,7 +52,18 @@ public class SponsorCommercialBannerShowService implements AbstractShowService<S
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "slogan", "imageurl", "targeturl", "creditCard.cardNumber", "creditCard.holder", "creditCard.cvv", "creditCard.brand", "creditCard.expirationMonth", "creditCard.expirationYear");
+		Principal principal;
+		int userAccountId;
+		Sponsor sponsor;
+
+		principal = request.getPrincipal();
+		userAccountId = principal.getAccountId();
+		sponsor = this.repositorySponsor.findOneSponsorByUserAccountId(userAccountId);
+
+		Collection<CreditCard> cards = this.repositoryCreditCard.findBySponsorId(sponsor.getId());
+		model.setAttribute("creditCard", cards);
+
+		request.unbind(entity, model, "slogan", "imageurl", "targeturl");
 	}
 
 	@Override
