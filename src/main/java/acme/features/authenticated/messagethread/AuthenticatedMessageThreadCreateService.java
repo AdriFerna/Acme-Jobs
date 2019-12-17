@@ -60,7 +60,7 @@ public class AuthenticatedMessageThreadCreateService implements AbstractCreateSe
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "ownerId");
+		request.unbind(entity, model, "title");
 	}
 
 	@Override
