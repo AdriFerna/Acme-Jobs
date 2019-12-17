@@ -219,6 +219,7 @@
        `id` integer not null,
         `version` integer not null,
         `creation_moment` datetime(6),
+        `owner_id` varchar(255),
         `title` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
