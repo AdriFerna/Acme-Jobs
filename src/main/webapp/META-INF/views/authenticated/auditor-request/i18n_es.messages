@@ -1,7 +1,7 @@
 authenticated.auditor-request.form.label.firm = Firma
 authenticated.auditor-request.form.label.statement = Declaración de responsabilidad
 
-authenticated.auditor-request.alreadyRequested = Ya has solicitado el rol
+authenticated.auditor-request.requested.error = Tu solicitud está siendo procesada
 
 authenticated.auditor-request.form.label.create = Registrar
 authenticated.auditor-request.form.label.return = Volver

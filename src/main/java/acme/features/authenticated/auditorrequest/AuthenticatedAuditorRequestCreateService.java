@@ -5,12 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.auditorRequest.AuditorRequest;
+import acme.entities.roles.Auditor;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
 import acme.framework.entities.Principal;
-import acme.framework.entities.UserAccount;
 import acme.framework.services.AbstractCreateService;
 
 @Service
@@ -23,10 +23,13 @@ public class AuthenticatedAuditorRequestCreateService implements AbstractCreateS
 	@Override
 	public boolean authorise(final Request<AuditorRequest> request) {
 		assert request != null;
-		int id = request.getPrincipal().getAccountId();
-		int yaRealizada = this.repository.findAuditorRequestByUserAccountId(id);
-		boolean res = yaRealizada >= 1 ? false : true;
-		return res;
+		/*
+		 * int id = request.getPrincipal().getAccountId();
+		 * int yaRealizada = this.repository.findAuditorRequestByUserAccountId(id);
+		 * boolean res = yaRealizada >= 1 ? false : true;
+		 */
+
+		return !request.getPrincipal().hasRole(Auditor.class);
 	}
 
 	@Override
@@ -43,6 +46,12 @@ public class AuthenticatedAuditorRequestCreateService implements AbstractCreateS
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		int authenticatedId = request.getPrincipal().getActiveRoleId();
+		int countPending = this.repository.findAuditorRequestByAuthenticatedId(authenticatedId);
+		if (countPending > 0) {
+			String alreadyRequested = "authenticated.auditor-request.requested.error";
+			model.setAttribute("requestedError", alreadyRequested);
+		}
 		request.unbind(entity, model, "firm", "statement");
 
 	}
@@ -54,12 +63,11 @@ public class AuthenticatedAuditorRequestCreateService implements AbstractCreateS
 		Principal principal;
 
 		AuditorRequest ar;
-		UserAccount ac;
-
+		Authenticated at;
 		principal = request.getPrincipal();
-		ac = this.repository.findUserAccountById(principal.getAccountId());
+		at = this.repository.findAuthenticatedById(principal.getActiveRoleId());
 		ar = new AuditorRequest();
-		ar.setUser(ac);
+		ar.setUser(at);
 		return ar;
 
 	}

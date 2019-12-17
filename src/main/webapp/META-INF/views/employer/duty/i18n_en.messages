@@ -7,6 +7,7 @@ employer.duty.form.label.title = Title
 employer.duty.form.label.description = Description
 employer.duty.form.label.percentage = Percentage of work per week
 employer.duty.form.button.create = Create
+employer.duty.form.button.update = Update
 employer.duty.message.job = Duties' Job
 
 employer.duty.error.title.spam = The title is considered spam

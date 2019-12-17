@@ -22,7 +22,7 @@ public class AdministratorNonCommercialBannerUpdateService implements AbstractUp
 	public boolean authorise(final Request<NonCommercialBanner> request) {
 		assert request != null;
 
-		return true;
+		return false;
 	}
 
 	@Override

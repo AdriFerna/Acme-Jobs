@@ -18,7 +18,7 @@
 
 <acme:form-submit code="employer.duty.form.button.addDuty" 
      action="/employer/duty/add?idJob=${id}"
-     test="${command == 'show'  && status == 'draft'}"
+     test="${command != 'create'  && status == 'draft'}"
      method = "get"/>
      
 <acme:form-submit code="employer.job.form.button.create" 
@@ -53,11 +53,13 @@
 	</acme:form>
 	
 	
-<jstl:if test="${command != 'create' }" > 
+<jstl:if test="${command != 'create' && status == 'draft'}" > 
 <a href = /acme-jobs/employer/duty/list?idJob=<jstl:out value="${id}"></jstl:out>>
 <acme:message code="employer.job.message.duties"/>
 </a>
+</jstl:if>
 <br>
+<jstl:if test="${command == 'show' && status == 'published' }" > 
 <a href = /acme-jobs/authenticated/audit-record/list?idJob=<jstl:out value="${id}"></jstl:out>>
 <acme:message code="employer.job.message.audit-record"/>
 </a>

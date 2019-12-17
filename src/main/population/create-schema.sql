@@ -360,9 +360,9 @@ create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
        references `user_account` (`id`);
 
     alter table `auditor_request` 
-       add constraint `FKkn8ax54577bh95khvuyoapv0c` 
+       add constraint `FK49gx0x5hlvlehwyvgesb15kw3` 
        foreign key (`user_id`) 
-       references `user_account` (`id`);
+       references `authenticated` (`id`);
 
     alter table `authenticated` 
        add constraint FK_h52w0f3wjoi68b63wv9vwon57 

@@ -10,6 +10,7 @@ import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Administrator;
+import acme.framework.entities.UserAccount;
 import acme.framework.services.AbstractUpdateService;
 
 @Service
@@ -67,9 +68,10 @@ public class AdministratorAuditorRequestAcceptService implements AbstractUpdateS
 		String firm = request.getModel().getString("firm");
 		String statement = request.getModel().getString("statement");
 		Auditor a = new Auditor();
+		UserAccount c = entity.getUser().getUserAccount();
 		a.setFirm(firm);
 		a.setStatement(statement);
-		a.setUserAccount(entity.getUser());
+		a.setUserAccount(c);
 		this.repository.save(a);
 
 	}

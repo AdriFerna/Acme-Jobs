@@ -21,7 +21,7 @@
 
     alter table `auditor_request` 
        drop 
-       foreign key `FKkn8ax54577bh95khvuyoapv0c`;
+       foreign key `FK49gx0x5hlvlehwyvgesb15kw3`;
 
     alter table `authenticated` 
        drop 

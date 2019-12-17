@@ -21,4 +21,5 @@ public interface AdministratorAuditorRequestRepository extends AbstractRepositor
 
 	@Query("select a from UserAccount a where a.id = ?1")
 	UserAccount findUserAccountById(int id);
+
 }

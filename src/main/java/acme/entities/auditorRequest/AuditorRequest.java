@@ -7,8 +7,8 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import acme.framework.entities.Authenticated;
 import acme.framework.entities.DomainEntity;
-import acme.framework.entities.UserAccount;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,7 +22,7 @@ public class AuditorRequest extends DomainEntity {
 	@NotNull
 	@Valid
 	@ManyToOne()
-	private UserAccount			user;
+	private Authenticated		user;
 
 	private Boolean				status;
 
