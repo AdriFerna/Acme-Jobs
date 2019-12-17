@@ -33,7 +33,7 @@ public class WorkerJobApplicationUpdateService implements AbstractUpdateService<
 		worker = jobApplication.getWorker();
 		principal = request.getPrincipal();
 		result = worker.getUserAccount().getId() == principal.getAccountId();
-		return result;
+		return false;
 	}
 
 	@Override

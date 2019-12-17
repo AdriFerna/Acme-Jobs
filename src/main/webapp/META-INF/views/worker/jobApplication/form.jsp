@@ -12,10 +12,13 @@
 <acme:form-textarea code="worker.jobApplication.form.label.statement" path="statement"/>
 <acme:form-textarea code="worker.jobApplication.form.label.skills" path="skills"/>
 <acme:form-textarea code="worker.jobApplication.form.label.qualifications" path="qualifications"/>
-<jstl:if test="${status != 'pending' }">
+<jstl:if test="${status != 'pending' && command == 'show' }">
 <acme:form-textarea code="worker.jobApplication.form.label.justification" path="justification"/>
 </jstl:if>
-<jstl:if test="${status == 'pending' }">
+<!--
+	NO ES NECESARIA LA ACTUALIZACIÓN NI LA ELIMINACIÓN
+
+ <jstl:if test="${status == 'pending' }">
 <acme:form-submit test="${command == 'show' }"
 	code="worker.jobApplication.form.button.update"
 	action="/worker/job-application/update"/>
@@ -28,7 +31,7 @@
 	<acme:form-submit test="${command == 'delete' }"
 	code="worker.jobApplication.form.button.delete"
 	action="/worker/job-application/delete"/>
-</jstl:if>
+</jstl:if> -->
 	<acme:form-submit test="${command == 'create' }"
 	code="worker.jobApplication.form.button.create"
 	action="/worker/job-application/create"/>

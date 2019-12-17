@@ -63,6 +63,8 @@ public class WorkerJobApplicationCreateService implements AbstractCreateService<
 		res.setStatus("pending");
 		res.setUpdateMoment(null);
 		Worker w = this.repository.getWorker(request.getPrincipal().getActiveRoleId());
+		res.setQualifications(w.getQualifications());
+		res.setSkills(w.getSkills());
 		res.setWorker(w);
 		int idJob = request.getModel().getInteger("idJob");
 		res.setJob(this.repository.getJob(idJob));

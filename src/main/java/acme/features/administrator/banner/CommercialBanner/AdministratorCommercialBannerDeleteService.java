@@ -22,7 +22,7 @@ public class AdministratorCommercialBannerDeleteService implements AbstractDelet
 	public boolean authorise(final Request<CommercialBanner> request) {
 		assert request != null;
 
-		return true;
+		return false;
 	}
 
 	@Override
