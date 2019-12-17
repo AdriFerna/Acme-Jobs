@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.message;
+package acme.features.authenticated.messagethread;
 
 import java.util.Collection;
 
@@ -37,7 +37,7 @@ public class AuthenticatedMessageThreadListService implements AbstractListServic
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "creationMoment");
+		request.unbind(entity, model, "title", "ownerId");
 	}
 
 	@Override

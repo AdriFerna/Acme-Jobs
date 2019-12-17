@@ -60,6 +60,7 @@ master.menu.authenticated.job.list = List Jobs
 
 # master.menu.authenticated.message-thread #######################################################
 master.menu.authenticated.message-thread.list = Message Threads
+master.menu.authenticated.message-thread.create = Create Message Threads
 
 # master.menu.employer#######################################################
 master.menu.employer = Employer

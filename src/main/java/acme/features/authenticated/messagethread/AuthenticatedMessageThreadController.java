@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.message;
+package acme.features.authenticated.messagethread;
 
 import javax.annotation.PostConstruct;
 
@@ -24,6 +24,9 @@ public class AuthenticatedMessageThreadController extends AbstractController<Aut
 	@Autowired
 	private AuthenticatedMessageThreadShowService	showService;
 
+	@Autowired
+	private AuthenticatedMessageThreadCreateService	createService;
+
 
 	// Constructors -----------------------------------------------------
 
@@ -31,5 +34,6 @@ public class AuthenticatedMessageThreadController extends AbstractController<Aut
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
+		super.addBasicCommand(BasicCommand.CREATE, this.createService);
 	}
 }
