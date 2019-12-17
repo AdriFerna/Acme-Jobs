@@ -133,6 +133,7 @@ master.menu.sponsor.nonCommercialBanner = Lista Banners No Comerciales
 master.menu.auditor = Auditor
 master.menu.auditor.jobAudited = Trabajos auditados
 master.menu.auditor.jobNoAudited = Trabajos no auditados
+master.menu.auditor.auditRecord = Lista de Registro de Auditoría
 
 # master.menu.authenticated.challenge #######################################################
 master.menu.authenticated.challenge = Retos
