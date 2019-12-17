@@ -125,14 +125,18 @@ master.menu.consumer.offer.create = Crear oferta
 # master.menu.sponsor ##########################################################
 
 master.menu.sponsor = Patrocinador
+master.menu.sponsor.commercialBanner.create = Crear Banners Comerciales
 master.menu.sponsor.commercialBanner = Lista Banners Comerciales
+master.menu.sponsor.commercialBanner.create = Crear Banners No Comerciales
 master.menu.sponsor.nonCommercialBanner = Lista Banners No Comerciales
+master.menu.sponsor.creditCard.list = Lista Tarjeta de Crédito
 
 # master.menu.auditor ##########################################################
 
 master.menu.auditor = Auditor
 master.menu.auditor.jobAudited = Trabajos auditados
 master.menu.auditor.jobNoAudited = Trabajos no auditados
+master.menu.auditor.auditRecord = Lista de Registro de Auditoría
 
 # master.menu.authenticated.challenge #######################################################
 master.menu.authenticated.challenge = Retos
@@ -151,7 +155,6 @@ master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
 master.menu.user-account.sponsor = Datos de sponsor
 master.menu.user-account.become-sponsor = Hazte sponsor
-master.menu.user-account.sponsor.creditCard.list = Tarjeta de Crédito
 
 master.menu.user-account.become-employer = Hazte empleador
 master.menu.user-account.employer = Datos de empleador

@@ -1,0 +1,8 @@
+auditor.auditRecord.form.label.auditor = Auditor
+auditor.auditRecord.form.label.job = Job
+auditor.auditRecord.form.label.title= Title
+auditor.auditRecord.form.label.moment= Moment
+auditor.auditRecord.form.label.status = Status
+auditor.auditRecord.form.label.body = Body
+auditor.auditRecord.form.label.create = Create
+auditor.auditRecord.form.label.return = Return

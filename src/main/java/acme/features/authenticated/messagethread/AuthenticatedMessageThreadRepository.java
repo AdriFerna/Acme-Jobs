@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.message;
+package acme.features.authenticated.messagethread;
 
 import java.util.Collection;
 import java.util.List;
@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.messages.MessageThread;
+import acme.framework.entities.Authenticated;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
@@ -15,6 +16,9 @@ public interface AuthenticatedMessageThreadRepository extends AbstractRepository
 
 	@Query("select mt from MessageThread mt where mt.id = ?1")
 	MessageThread findOneById(int id);
+
+	@Query("select u from Authenticated u where u.id = ?1")
+	Authenticated findOneAuthenticatedById(int idAuthenticated);
 
 	@Query("select count(p) from Authenticated_MessageThread  p where p.user.id = ?1 and p.thread.id = ?2")
 	Integer checkIfUserIsInTheThread(int userId, int threadId);

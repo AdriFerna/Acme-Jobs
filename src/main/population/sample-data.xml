@@ -804,16 +804,22 @@
 	<bean id = "messageThread01" class = "acme.entities.messages.MessageThread">
 		<property name="title" value="thread1"/>
 		<property name="creationMoment" value="2016/04/05 00:06"/>
+		<property name="ownerId" value="Authenticated2"/>
+		<!-- <property name="owner" ref="Authenticated2"/> -->
 	</bean>
 	
 	<bean id = "messageThread02" class = "acme.entities.messages.MessageThread">
 		<property name="title" value="thread2"/>
 		<property name="creationMoment" value="2016/04/07 00:06"/>
+		<property name="ownerId" value="Authenticated2"/>
+		<!-- <property name="owner" ref="Authenticated2"/> -->
 	</bean>
 	
 	<bean id = "messageThread03" class = "acme.entities.messages.MessageThread">
 		<property name="title" value="thread3"/>
 		<property name="creationMoment" value="2016/04/05 00:06"/>
+		<property name="ownerId" value="Authenticated2"/>
+		<!-- <property name="owner" ref="Authenticated2"/> -->
 	</bean>
 	
 	<!-- Authenticated_MessageThread -->

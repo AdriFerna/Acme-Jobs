@@ -21,3 +21,6 @@ sponsor.creditCard.list.button.create = Crear
 
 sponsor.creditCard.form.button.update = Actualizar
 sponsor.creditCard.form.button.return = Volver
+
+sponsor.creditCard.error.cvv = El CVV tiene que tener 3 dígitos obligatoriamente 
+sponsor.creditCard.error.expiration = La fecha de expiración está en el pasado

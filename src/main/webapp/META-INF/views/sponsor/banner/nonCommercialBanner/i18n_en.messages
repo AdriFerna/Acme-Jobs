@@ -9,4 +9,7 @@ sponsor.nonCommercialBanner.form.label.imageurl = Image URL
 sponsor.nonCommercialBanner.form.label.targeturl = Target URL
 sponsor.nonCommercialBanner.form.label.jingleurl = Jingle URL
 
+sponsor.nonCommercialBanner.form.button.create = Create
+sponsor.nonCommercialBanner.form.button.update = Update
+sponsor.nonCommercialBanner.form.button.delete = Delete
 sponsor.nonCommercialBanner.form.button.return = Return
