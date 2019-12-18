@@ -26,7 +26,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(indexes = {
-	@Index(columnList = "moment")
+	@Index(columnList = "moment"), @Index(columnList = "status")
 })
 public class AuditRecord extends DomainEntity {
 

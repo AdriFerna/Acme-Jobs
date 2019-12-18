@@ -1518,34 +1518,6 @@ m2=0..*
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>728</x>
-      <y>1496</y>
-      <w>224</w>
-      <h>128</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-x
-m1=1
-m2=0..*
- Accepts</panel_attributes>
-    <additional_attributes>10.0;10.0;260.0;140.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>704</x>
-      <y>1512</y>
-      <w>240</w>
-      <h>152</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-x
-m1=1
-m2=0..*
- Rejects</panel_attributes>
-    <additional_attributes>10.0;10.0;280.0;170.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
       <x>1928</x>
       <y>1464</y>
       <w>104</w>
