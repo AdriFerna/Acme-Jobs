@@ -53,18 +53,14 @@
 	</acme:form>
 	
 	
-<jstl:if test="${command != 'create' && status == 'draft'}" > 
-<a href = /acme-jobs/employer/duty/list?idJob=<jstl:out value="${id}"></jstl:out>>
-<acme:message code="employer.job.message.duties"/>
-</a>
-</jstl:if>
-<br>
-<jstl:if test="${command == 'show' && status == 'published' }" > 
-<a href = /acme-jobs/authenticated/audit-record/list?idJob=<jstl:out value="${id}"></jstl:out>>
-<acme:message code="employer.job.message.audit-record"/>
-</a>
-</jstl:if>
 
 <acme:form>
+<acme:form-submit method="get" test="${command != 'create'}"  code="employer.job.message.duties" action="/employer/duty/list?idJob=${id}"/>
+
+<acme:form-submit method="get" test="${command == 'show' && status == 'published' }"  code="employer.job.message.audit-record" action="/authenticated/audit-record/list?idJob=${id}"/>
+
+
+
+
 <acme:form-return code="autheticated.job.form.button.return"/>
 </acme:form>

@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.banners.CommercialBanner;
+import acme.entities.customParams.Configuration;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
@@ -23,5 +24,8 @@ public interface SponsorCommercialBannerRepository extends AbstractRepository {
 
 	@Query("select count(a) from CreditCard a where a.sponsor.id = ?1")
 	int countCreditCardsOfSponsor(int id);
+
+	@Query("select a from Configuration a")
+	Configuration getConfigParams();
 
 }

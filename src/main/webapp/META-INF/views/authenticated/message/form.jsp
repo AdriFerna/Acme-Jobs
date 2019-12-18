@@ -24,6 +24,7 @@
 	<acme:form-textbox code="autheticated.message.form.label.title" path="title" />
 	<acme:form-textarea code="autheticated.message.form.label.body" path="body" />
 	<acme:form-textbox code="autheticated.message.form.label.tags" path="tags" />
+	<acme:form-checkbox code="autheticated.message.form.checkbox.aceptar" path="aceptar"/>
 	<acme:form-return code="autheticated.message.form.button.return"/>
 	<acme:form-hidden path="idThread" />
 	<acme:form-submit  code="authenticated.message.form.button.create" action="/authenticated/message/create"/>

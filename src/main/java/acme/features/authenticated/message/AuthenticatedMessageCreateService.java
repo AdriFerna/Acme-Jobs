@@ -6,8 +6,10 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.customParams.Configuration;
 import acme.entities.messages.Message;
 import acme.entities.messages.MessageThread;
+import acme.forms.SpamCheck;
 import acme.framework.components.Errors;
 import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
@@ -47,6 +49,9 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 		if (request.isMethod(HttpMethod.GET)) {
 			int idThread = request.getModel().getInteger("idThread");
 			model.setAttribute("idThread", idThread);
+			model.setAttribute("aceptar", "false");
+		} else {
+			request.transfer(model, "aceptar");
 		}
 
 		request.unbind(entity, model);
@@ -96,6 +101,25 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		boolean isAccepted = request.getModel().getBoolean("aceptar");
+		errors.state(request, isAccepted, "aceptar", "authenticated.message.error.aceptar");
+
+		Configuration c = this.repository.getConfigParams();
+		if (!errors.hasErrors("body")) {
+			boolean bodySpam = SpamCheck.checkSpam(entity.getBody(), c);
+			errors.state(request, !bodySpam, "body", "authenticated.message.error.body.spam");
+		}
+
+		if (!errors.hasErrors("tags")) {
+			boolean tagsSpam = SpamCheck.checkSpam(entity.getTags(), c);
+			errors.state(request, !tagsSpam, "tags", "authenticated.message.error.tags.spam");
+		}
+
+		if (!errors.hasErrors("title")) {
+			boolean titleSpam = SpamCheck.checkSpam(entity.getTitle(), c);
+			errors.state(request, !titleSpam, "title", "authenticated.message.error.title.spam");
+		}
 
 	}
 

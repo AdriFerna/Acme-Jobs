@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.auditRecord.AuditRecord;
+import acme.entities.customParams.Configuration;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Auditor;
+import acme.forms.SpamCheck;
 import acme.framework.components.Errors;
 import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
@@ -75,6 +77,16 @@ public class AuditorAuditRecordCreateService implements AbstractCreateService<Au
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		Configuration c = this.repository.getConfigParams();
+		if (!errors.hasErrors("title")) {
+			boolean titleSpam = SpamCheck.checkSpam(entity.getTitle(), c);
+			errors.state(request, !titleSpam, "title", "auditor.auditrecord.error.title.spam");
+		}
+
+		if (!errors.hasErrors("body")) {
+			boolean bodySpam = SpamCheck.checkSpam(entity.getBody(), c);
+			errors.state(request, !bodySpam, "body", "auditor.auditrecord.error.body.spam");
+		}
 
 	}
 

@@ -15,3 +15,4 @@ authenticated.messagethread.form.button.create = Create
 autheticated.messagethread.form.button.return = Return
 
 authenticated.message.message.form.button.create = Add Message
+authenticated.message.message.form.button.seeUsers = Show the users on the thread

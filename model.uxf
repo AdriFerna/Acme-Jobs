@@ -840,7 +840,7 @@ Job
 + title: String {NotBlank}
 + deadline: Date {Temporal(TIMESTAP)}
 + salary: Money {NotNull}
-+ moreInfo: String {NotBlank}
++ moreInfo: String {NotBlank,URL}
 + description: String {NotBlank}
 
 
@@ -882,7 +882,7 @@ Job Application
 + statement: String {NotBlank}
 + skills: String {NotBlank}
 + qualifications: String {NotBlank}
-+ updateMoment: Date {Temporal(TIMESTAMp
++ updateMoment: Date {Temporal(TIMESTAMP)}
 
 
 bg=yellow</panel_attributes>
@@ -900,7 +900,7 @@ bg=yellow</panel_attributes>
 Message Thread
 --
 + title: String {NotBlank}
-+ creationMoment: Date {Temporal(TIMESTAP)}
++ creationMoment: Date {Temporal(TIMESTAMP)}
 
 
 bg=yellow</panel_attributes>
@@ -911,15 +911,15 @@ bg=yellow</panel_attributes>
     <coordinates>
       <x>2016</x>
       <y>2200</y>
-      <w>264</w>
+      <w>304</w>
       <h>112</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Message
 --
 + title: String {NotBlank}
-+ creationMoment: Date {Temporal(TIMESTAP)}
-+ tags: String {NotBlank}
++ creationMoment: Date {Temporal(TIMESTAP),PAST}
++ tags: String 
 + body: String {NotBlank}
 
 
@@ -1029,7 +1029,7 @@ bg=yellow</panel_attributes>
       <h>232</h>
     </coordinates>
     <panel_attributes>lt=x-&gt;
-m1=1
+m1=0.`*
 m2=1
  Linked to</panel_attributes>
     <additional_attributes>30.0;270.0;10.0;10.0</additional_attributes>

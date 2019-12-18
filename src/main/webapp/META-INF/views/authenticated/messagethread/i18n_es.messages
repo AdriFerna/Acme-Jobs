@@ -13,3 +13,5 @@ autheticated.messagethread.form.label.ownerId = Id del Propietario
 authenticated.message.message.form.button.create = Añadir Mensaje
 authenticated.messagethread.form.button.create = Crear
 autheticated.messagethread.form.button.return = Volver
+
+authenticated.message.message.form.button.seeUsers = Ver los usuarios del hilo

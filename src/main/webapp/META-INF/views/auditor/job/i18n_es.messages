@@ -12,4 +12,5 @@ auditor.job.form.label.description = Descripción
 auditor.job.form.button.return = Volver
 auditor.job.form.button.create.auditRecord= Crear Auditoria
 
-employer.job.message.audit-record = Ver los registros de auditoría del trabajo
+auditor.job.message.audit-record = Ver los registros de auditoría del trabajo
+auditor.job.message.duties = Ver las responsabilidades del trabajo

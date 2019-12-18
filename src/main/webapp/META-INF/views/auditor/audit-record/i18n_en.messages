@@ -12,3 +12,6 @@ auditor.auditRecord.form.button.return = Return
 auditor.auditRecord.list.label.referenceNumber = Reference Number Of The Job
 auditor.auditRecord.list.label.status = Status
 auditor.auditRecord.list.label.title  = Title
+
+auditor.auditrecord.error.title.spam = The title is considered spam
+auditor.auditrecord.error.body.spam = The body of the mensaje is considered spam

@@ -5,7 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.banners.NonCommercialBanner;
+import acme.entities.customParams.Configuration;
 import acme.entities.roles.Sponsor;
+import acme.forms.SpamCheck;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -61,6 +63,27 @@ public class SponsorNonCommercialBannerCreateService implements AbstractCreateSe
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		Configuration c = this.repository.getConfigParams();
+		if (!errors.hasErrors("imageurl")) {
+			boolean imageSpam = SpamCheck.checkSpam(entity.getImageurl(), c);
+			errors.state(request, !imageSpam, "imageurl", "sponsor.noncomercialbanner.error.imageurl.spam");
+		}
+
+		if (!errors.hasErrors("slogan")) {
+			boolean sloganSpam = SpamCheck.checkSpam(entity.getSlogan(), c);
+			errors.state(request, !sloganSpam, "slogan", "sponsor.noncomercialbanner.error.slogan.spam");
+		}
+
+		if (!errors.hasErrors("targeturl")) {
+			boolean targetSpam = SpamCheck.checkSpam(entity.getTargeturl(), c);
+			errors.state(request, !targetSpam, "targeturl", "sponsor.noncomercialbanner.error.targeturl.spam");
+		}
+
+		if (!errors.hasErrors("jingleurl")) {
+			boolean jingleSpam = SpamCheck.checkSpam(entity.getJingleurl(), c);
+			errors.state(request, !jingleSpam, "jingleurl", "sponsor.noncomercialbanner.error.jingleurl.spam");
+		}
 
 	}
 

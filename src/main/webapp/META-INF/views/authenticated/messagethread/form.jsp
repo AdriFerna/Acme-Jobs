@@ -13,16 +13,12 @@
 	<acme:form-textbox code="autheticated.messagethread.form.label.title" path="title" readonly="true" />
 		<acme:form-moment  readonly="true" code="autheticated.messagethread.list.label.creationMoment" path="creationMoment"/>
 		
-		<acme:message code="authenticated.messagethread.message.users"></acme:message>
-		<br>
-			<jstl:forEach  items = "${usersData}" var = "user">
-				<jstl:out value=" · (${user[0]}) | ${user[1]} ,${user[2]} )  "></jstl:out>
-			<br>
-		
-			</jstl:forEach>
 		<acme:form-submit method="get" code="authenticated.message.message.message" action="/authenticated/message/list?idThread=${id}"/>
 		
 	<acme:form-submit code="authenticated.message.message.form.button.create" action="/authenticated/message/create?idThread=${id}"
+	method="get"/>
+	
+	<acme:form-submit code="authenticated.message.message.form.button.seeUsers" action="/authenticated/users/list?idThread=${id}"
 	method="get"/>
 
  <acme:form-submit

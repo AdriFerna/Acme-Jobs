@@ -5,7 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.auditorRequest.AuditorRequest;
+import acme.entities.customParams.Configuration;
 import acme.entities.roles.Auditor;
+import acme.forms.SpamCheck;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -77,6 +79,17 @@ public class AuthenticatedAuditorRequestCreateService implements AbstractCreateS
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		Configuration c = this.repository.getConfigParams();
+		if (!errors.hasErrors("firm")) {
+			boolean firmSpam = SpamCheck.checkSpam(entity.getFirm(), c);
+			errors.state(request, !firmSpam, "firm", "authenticated.auditrequest.error.firm.spam");
+		}
+
+		if (!errors.hasErrors("statement")) {
+			boolean statementSpam = SpamCheck.checkSpam(entity.getStatement(), c);
+			errors.state(request, !statementSpam, "statement", "authenticated.auditrequest.error.statement.spam");
+		}
 	}
 
 	@Override

@@ -1,12 +1,15 @@
 
 package acme.features.worker.jobApplication;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.jobApplication.JobApplication;
+import acme.entities.jobs.Job;
 import acme.entities.roles.Worker;
 import acme.framework.components.Errors;
 import acme.framework.components.HttpMethod;
@@ -25,7 +28,12 @@ public class WorkerJobApplicationCreateService implements AbstractCreateService<
 	public boolean authorise(final Request<JobApplication> request) {
 		assert request != null;
 
-		return true;
+		int idJob = request.getModel().getInteger("idJob");
+		Calendar c = Calendar.getInstance(TimeZone.getDefault());
+		Job j = this.repository.getJob(idJob);
+		boolean res = j.getDeadline().after(c.getTime()) && j.getStatus().equals("published");
+
+		return res;
 	}
 
 	@Override

@@ -8,9 +8,11 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.banners.CommercialBanner;
 import acme.entities.banners.CreditCard;
+import acme.entities.customParams.Configuration;
 import acme.entities.roles.Sponsor;
 import acme.features.authenticated.sponsor.AuthenticatedSponsorRepository;
 import acme.features.sponsor.creditCard.SponsorCreditCardRepository;
+import acme.forms.SpamCheck;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -83,6 +85,22 @@ public class SponsorCommercialBannerUpdateService implements AbstractUpdateServi
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		Configuration c = this.repository.getConfigParams();
+		if (!errors.hasErrors("imageurl")) {
+			boolean imageSpam = SpamCheck.checkSpam(entity.getImageurl(), c);
+			errors.state(request, !imageSpam, "imageurl", "sponsor.comercialbanner.error.imageurl.spam");
+		}
+
+		if (!errors.hasErrors("slogan")) {
+			boolean sloganSpam = SpamCheck.checkSpam(entity.getSlogan(), c);
+			errors.state(request, !sloganSpam, "slogan", "sponsor.comercialbanner.error.slogan.spam");
+		}
+
+		if (!errors.hasErrors("targeturl")) {
+			boolean targetSpam = SpamCheck.checkSpam(entity.getTargeturl(), c);
+			errors.state(request, !targetSpam, "targeturl", "sponsor.comercialbanner.error.targeturl.spam");
+		}
 
 		boolean countCreditCards = this.repository.countCreditCardsOfSponsor(request.getPrincipal().getActiveRoleId()) > 0;
 		errors.state(request, countCreditCards, "creditCardId", "sponsor.commercialbanner.nocreditcard.error");

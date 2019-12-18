@@ -25,6 +25,7 @@
 	
 	<acme:form-submit test="${command == 'create' }" code="sponsor.creditCard.form.button.create" action="/sponsor/credit-card/create"/>
 	<acme:form-submit test="${command == 'show' }" code="sponsor.creditCard.form.button.update" action="/sponsor/credit-card/update"/>
+	<acme:form-submit test="${command == 'update' }" code="sponsor.creditCard.form.button.update" action="/sponsor/credit-card/update"/>
 	
 	<acme:form-return code="sponsor.creditCard.form.button.return"/>
 	

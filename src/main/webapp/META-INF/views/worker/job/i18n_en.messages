@@ -10,6 +10,7 @@ worker.job.form.label.salary = Salary
 worker.job.form.label.moreInfo = More Info
 worker.job.form.label.description = Description
 worker.job.form.button.return = Return
+worker.jobApplication.form.button.create = Apply for this job
 
 authenticated.job.message.duties = See the Duties of the Job
 authenticated.job.message.audit-record = See the Audit Records of the Job

@@ -13,3 +13,5 @@ auditor.job.form.button.return = Return
 auditor.job.form.button.create.auditRecord= Create Audit Record
 
 auditor.job.message.audit-record = See the Audit Records of the Job
+
+auditor.job.message.duties = See the duties of the Job

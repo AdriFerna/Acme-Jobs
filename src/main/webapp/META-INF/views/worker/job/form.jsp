@@ -13,15 +13,9 @@
 <acme:form-textarea code="worker.job.form.label.description" path="description"/>
 </acme:form>
 
-<jstl:if test="${command != 'create' }">
-<a href = /acme-jobs/authenticated/duty/list?idJob=<jstl:out value="${id}"></jstl:out>>
-<acme:message code="authenticated.job.message.duties"/>
-</a>
-</br>
-<a href = /acme-jobs/authenticated/audit-record/list?idJob=<jstl:out value="${id}"></jstl:out>>
-<acme:message code="authenticated.job.message.audit-record"/>
-</a>
-</jstl:if>
+<acme:form-submit code="authenticated.job.message.duties" action ="/authenticated/duty/list?idJob=${id}" method="get" />
+
+<acme:form-submit code = "authenticated.job.message.audit-record" action="/authenticated/audit-record/list?idJob=${id}" method="get"/>
 
 <acme:form>
 <acme:form-submit test="${command == 'show' }"

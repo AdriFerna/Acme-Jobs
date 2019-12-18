@@ -99,8 +99,10 @@ public class EmployerJobPublishService implements AbstractUpdateService<Employer
 			errors.state(request, !descSpam, "description", "employer.job.error.description.spam");
 		}
 
-		boolean moreInfoSpam = SpamCheck.checkSpam(entity.getMoreInfo(), c);
-		errors.state(request, !moreInfoSpam, "moreInfo", "employer.job.error.moreInfo.spam");
+		if (!errors.hasErrors("moreInfo")) {
+			boolean moreInfoSpam = SpamCheck.checkSpam(entity.getMoreInfo(), c);
+			errors.state(request, !moreInfoSpam, "moreInfo", "employer.job.error.moreInfo.spam");
+		}
 
 		Double dutiesPercentage = this.repository.getTotalPercentageOfDuties(entity.getId());
 		boolean totalDutiesOk = dutiesPercentage.equals(100.);

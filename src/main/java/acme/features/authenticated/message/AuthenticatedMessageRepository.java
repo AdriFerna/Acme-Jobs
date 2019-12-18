@@ -6,6 +6,7 @@ import java.util.Collection;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import acme.entities.customParams.Configuration;
 import acme.entities.messages.Message;
 import acme.entities.messages.MessageThread;
 import acme.framework.entities.Authenticated;
@@ -28,5 +29,8 @@ public interface AuthenticatedMessageRepository extends AbstractRepository {
 
 	@Query("select u from Authenticated u where u.id = ?1")
 	Authenticated findUser(int idUser);
+
+	@Query("select a from Configuration a")
+	Configuration getConfigParams();
 
 }

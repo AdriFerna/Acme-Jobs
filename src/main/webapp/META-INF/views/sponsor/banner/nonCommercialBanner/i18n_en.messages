@@ -13,3 +13,8 @@ sponsor.nonCommercialBanner.form.button.create = Create
 sponsor.nonCommercialBanner.form.button.update = Update
 sponsor.nonCommercialBanner.form.button.delete = Delete
 sponsor.nonCommercialBanner.form.button.return = Return
+
+sponsor.noncomercialbanner.error.imageurl.spam = The image url is considered spam
+sponsor.noncomercialbanner.error.slogan.spam = The slogan is considered spam
+sponsor.noncomercialbanner.error.targeturl.spam = The target url is considered spam
+sponsor.noncomercialbanner.error.jingleurl.spam = The jingle url is considered spam
