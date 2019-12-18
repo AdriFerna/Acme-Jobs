@@ -1,0 +1,14 @@
+auditor.auditRecord.form.label.title = Título
+auditor.auditRecord.form.label.moment = Momento de creación
+auditor.auditRecord.form.label.body = Cuerpo
+auditor.auditRecord.form.label.status = Estado
+auditor.auditRecord.form.label.auditor.firm = Firma
+auditor.auditRecord.form.label.job.refNumber = Nº de referencia del trabajo
+auditor.auditRecord.form.label.job.title = Título del trabajo
+auditor.auditRecord.form.label.create = Crear
+auditor.auditRecord.form.label.publish = Publicar
+auditor.auditRecord.form.button.return = Volver
+
+auditor.auditRecord.list.label.referenceNumber = Nº de referencia del trabajo
+auditor.auditRecord.list.label.status = Estado
+auditor.auditRecord.list.label.title  = Título

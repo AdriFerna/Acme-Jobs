@@ -28,11 +28,9 @@
 </jstl:if>
 </acme:form>
 
+<acme:form-submit test = "${command == 'show' }" action="/employer/job/show?id=${job.id}" code="employer.job.message.job" method="get"/>
 
 
-<a href = /acme-jobs/employer/job/show?id=<jstl:out value="${job.id}"></jstl:out>>
-<acme:message code="employer.job.message.job"/>
-</a>
 
 <acme:form>
 <acme:form-return code="autheticated.job.form.button.return"/>

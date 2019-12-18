@@ -93,7 +93,7 @@
         `imageurl` varchar(255),
         `slogan` varchar(255),
         `targeturl` varchar(255),
-        `sponsor_id` integer,
+        `sponsor_id` integer not null,
         `credit_card_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
@@ -219,8 +219,8 @@
        `id` integer not null,
         `version` integer not null,
         `creation_moment` datetime(6),
-        `owner_id` varchar(255),
         `title` varchar(255),
+        `owner_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -230,7 +230,7 @@
         `imageurl` varchar(255),
         `slogan` varchar(255),
         `targeturl` varchar(255),
-        `sponsor_id` integer,
+        `sponsor_id` integer not null,
         `jingleurl` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
@@ -309,9 +309,6 @@
 create index IDXnhikaa2dj3la6o2o7e9vo01y0 on `announcement` (`moment`);
 create index IDXrc4ws05g8xybytvf60fgv6o5m on `audit_record` (`moment`);
 create index IDXnr284tes3x8hnd3h716tmb3fr on `challenge` (`deadline`);
-
-    alter table `commercial_banner` 
-       add constraint UK_tnxlqvs5k2qohd925u32ycgps unique (`credit_card_id`);
 create index IDX9pkce3d1y6w47wadap5s5xptc on `company_record` (`stars`);
 create index IDXk2t3uthe649ao1jllcuks0gv4 on `investor_record` (`stars`);
 create index IDXfdmpnr8o4phmk81sqsano16r on `job` (`deadline`);
@@ -433,6 +430,11 @@ create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
     alter table `message` 
        add constraint `FKik4epe9dp5q6uenarfyia7xin` 
        foreign key (`user_id`) 
+       references `authenticated` (`id`);
+
+    alter table `message_thread` 
+       add constraint `FKljabur1weonvmg511atm2ql6` 
+       foreign key (`owner_id`) 
        references `authenticated` (`id`);
 
     alter table `non_commercial_banner` 

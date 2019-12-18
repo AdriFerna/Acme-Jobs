@@ -5,28 +5,49 @@
 
 
 <acme:form>
-	<acme:form-textbox code="autheticated.messagethread.form.label.title" path="title" />
-	<acme:form-textbox code="autheticated.messagethread.form.label.ownerId" path="ownerId" />
+
+<jstl:if test="${command == 'add' }">
+<jstl:choose>
+<jstl:when test="${empty usersToAdd}">
+		<acme:message code="autheticated.messagethread.form.noMoreUsers"/>
+	</jstl:when>
 	
-	<jstl:if test="${command != 'create'}">
-		<acme:form-moment code="autheticated.messagethread.list.label.creationMoment" path="creationMoment"/>
-		
-		<acme:message code="authenticated.messagethread.message.users"></acme:message>
-		<br>
-			<jstl:forEach  items = "${usersData}" var = "user">
-				<jstl:out value=" · (${user[0]}) | ${user[1]} ,${user[2]}   "></jstl:out>
-			<br>
-		
-			</jstl:forEach>
+	<jstl:otherwise>
+	<acme:form-select code="authenticated.messagethread.form.usersToAdd" path="userAdded">
+	<jstl:forEach items="${usersToAdd}" var = "item">
+	<acme:form-option code="${item.userAccount.username}" value="${item.id}"/>
+	</jstl:forEach>
 	
-		<a href = /acme-jobs/authenticated/message/list?idThread=<jstl:out value="${id}"></jstl:out>>
-			<acme:message code="authenticated.message.message.message"/>
-		</a>
-		
-		<br>
+	</acme:form-select>
+	<acme:form-hidden path="idThread"/>
+	<acme:form-submit code="autheticated.messagethread.form.button.addUser" action="/authenticated/authenticated-message-thread/add"/>
+
+	</jstl:otherwise>
+	</jstl:choose>
+	
 	</jstl:if>
 	
-	<acme:form-submit test = "${ command == 'create'}" code="authenticated.messagethread.form.button.create" action="/authenticated/message-thread/create"/>
+	<jstl:if test="${command == 'delete'}">
+<jstl:choose>
+<jstl:when test="${empty usersToRemove}">
+		<acme:message code="autheticated.messagethread.form.noMoreUsersToRemove"/>
+	</jstl:when>
+	
+	<jstl:otherwise>
+	<acme:form-select code="authenticated.messagethread.form.usersToRemove" path="userRemoved">
+	<jstl:forEach items="${usersToRemove}" var = "item">
+	<acme:form-option code="${item.userAccount.username}" value="${item.id}"/>
+	</jstl:forEach>
+	
+	</acme:form-select>
+	<acme:form-hidden path="idThread"/>
+	<acme:form-submit code="autheticated.messagethread.form.button.deleteUser" action="/authenticated/authenticated-message-thread/delete"/>
+
+	</jstl:otherwise>
+	</jstl:choose>
+	
+	</jstl:if>
+	
 	<acme:form-return code="autheticated.messagethread.form.button.return"/>
 	
 </acme:form>

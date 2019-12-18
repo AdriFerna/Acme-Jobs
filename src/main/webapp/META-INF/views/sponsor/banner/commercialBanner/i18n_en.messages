@@ -7,8 +7,12 @@ sponsor.commercialBanner.form.label.slogan = Slogan
 sponsor.commercialBanner.form.label.imageurl = Image URL
 sponsor.commercialBanner.form.label.targeturl = Target URL
 sponsor.commercialBanner.form.select.creditCard = Credit Card
-
+sponsor.commercialbanner.nocreditcard.error = You need a Credit Card to create a Commercial Banner
 sponsor.commercialBanner.form.button.create = Create
 sponsor.commercialBanner.form.button.update = Update
 sponsor.commercialBanner.form.button.delete = Delete
 sponsor.commercialBanner.form.button.return = Return
+
+sponsor.comercialbanner.error.imageurl.spam = The image url is considered spam
+sponsor.comercialbanner.error.slogan.spam = The slogan is considered spam
+sponsor.comercialbanner.error.targeturl.spam = The target url is considered spam

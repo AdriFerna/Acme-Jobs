@@ -7,24 +7,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.auditRecord.AuditRecord;
+import acme.entities.customParams.Configuration;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Auditor;
-import acme.features.auditor.job.AuditorJobRepository;
+import acme.forms.SpamCheck;
 import acme.framework.components.Errors;
 import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Principal;
 import acme.framework.services.AbstractCreateService;
 
 @Service
 public class AuditorAuditRecordCreateService implements AbstractCreateService<Auditor, AuditRecord> {
 
 	@Autowired
-	AuditorAuditRecordRepository	repository;
-
-	@Autowired
-	AuditorJobRepository			repositoryJOB;
+	AuditorAuditRecordRepository repository;
 
 
 	@Override
@@ -38,7 +35,7 @@ public class AuditorAuditRecordCreateService implements AbstractCreateService<Au
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		request.bind(entity, errors, "moment", "auditor");
+		request.bind(entity, errors, "moment");
 
 	}
 
@@ -53,7 +50,7 @@ public class AuditorAuditRecordCreateService implements AbstractCreateService<Au
 			model.setAttribute("idJob", idJob);
 		}
 
-		request.unbind(entity, model, "title", "status", "body", "job");
+		request.unbind(entity, model, "title", "body");
 
 	}
 
@@ -65,9 +62,13 @@ public class AuditorAuditRecordCreateService implements AbstractCreateService<Au
 		res.setMoment(t);
 
 		int idJob = request.getModel().getInteger("idJob");
-		Job j = this.repositoryJOB.findOneById(idJob);
-
+		Job j = this.repository.findJobById(idJob);
 		res.setJob(j);
+		Auditor a = this.repository.findAuditorById(request.getPrincipal().getActiveRoleId());
+		res.setAuditor(a);
+
+		res.setStatus("draft");
+
 		return res;
 	}
 
@@ -76,6 +77,16 @@ public class AuditorAuditRecordCreateService implements AbstractCreateService<Au
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		Configuration c = this.repository.getConfigParams();
+		if (!errors.hasErrors("title")) {
+			boolean titleSpam = SpamCheck.checkSpam(entity.getTitle(), c);
+			errors.state(request, !titleSpam, "title", "auditor.auditrecord.error.title.spam");
+		}
+
+		if (!errors.hasErrors("body")) {
+			boolean bodySpam = SpamCheck.checkSpam(entity.getBody(), c);
+			errors.state(request, !bodySpam, "body", "auditor.auditrecord.error.body.spam");
+		}
 
 	}
 
@@ -84,14 +95,6 @@ public class AuditorAuditRecordCreateService implements AbstractCreateService<Au
 		Date moment;
 		moment = new Date(System.currentTimeMillis() - 1);
 		entity.setMoment(moment);
-
-		Principal user;
-		user = request.getPrincipal();
-
-		Auditor auditor;
-		auditor = this.repository.findAuditorByUserAcountId(user.getAccountId());
-		entity.setAuditor(auditor);
-
 		this.repository.save(entity);
 
 	}

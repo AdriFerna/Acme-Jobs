@@ -7,6 +7,11 @@ autheticated.message.form.label.creationMoment = Creation Moment
 autheticated.message.form.label.body = Body
 autheticated.message.form.label.tags = Tags
 autheticated.message.form.label.user = User
+autheticated.message.form.checkbox.aceptar = Confirm?
+authenticated.message.error.aceptar = The Checkbox must be confirmed
+authenticated.message.error.body.spam = The body is considered spam
+authenticated.message.error.tags.spam = The tags are considered spam
+authenticated.message.error.title.spam = The title is considered spam
 autheticated.message.form.button.return = Return
 
 autheticated.message.form.label.user.userAccount.username = Username of the creator

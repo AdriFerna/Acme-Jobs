@@ -4,11 +4,11 @@
 	"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
-	<definition name="authenticated/message-thread-user/list" extends="master">
+	<definition name="authenticated/authenticated-message-thread/list" extends="master">
 		<put-attribute name="body" type="template" value="../authenticated/messagethreaduser/list.jsp"/>	
 	</definition>
 	
-	<definition name="authenticated/message-thread-user/form" extends="master">
+	<definition name="authenticated/authenticated-message-thread/form" extends="master">
 		<put-attribute name="body" type="template" value="../authenticated/messagethreaduser/form.jsp"/>	
 	</definition>
 </tiles-definitions>

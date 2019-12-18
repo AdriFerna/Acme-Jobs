@@ -14,7 +14,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Authenticated_MessageThread extends DomainEntity {
+public class AuthenticatedMessageThread extends DomainEntity {
 
 	//Serialisation identifier ---------------------------------------------
 

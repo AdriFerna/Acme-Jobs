@@ -5,3 +5,6 @@ authenticated.auditor-request.requested.error = Tu solicitud está siendo proces
 
 authenticated.auditor-request.form.label.create = Registrar
 authenticated.auditor-request.form.label.return = Volver
+
+authenticated.auditrequest.error.firm.spam = La firma es considerada spam
+authenticated.auditrequest.error.statement.spam = La declaración de responsabilidad es considerada spam

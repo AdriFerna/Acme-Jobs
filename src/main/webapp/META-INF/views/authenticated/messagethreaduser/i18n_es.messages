@@ -1,14 +1,8 @@
-autheticated.messagethread.list.label.title = Titulo
-autheticated.messagethread.list.label.creationMoment = Momento de Creación
-autheticated.messagethread.list.label.ownerId = Id del Propietario
+autheticated.messagethread.form.noMoreUsers = No hay más usuarios que puedan ser añadidos al hilo
+authenticated.messagethread.form.usersToAdd = Seleccione el usuario a añadir
+autheticated.messagethread.form.button.addUser = Añadir Usuario
 
-authenticated.messagethread.message.users = Usuarios en el hilo ((Nombre de Usuario) | Nombre, Apellidos)
-authenticated.message.message.message = Ver los mensajes del hilo
-
-autheticated.messagethread.form.label.title = Titulo
-autheticated.messagethread.form.label.creationMoment = Momento de Creación
-autheticated.messagethread.form.label.ownerId = Id del Propietario
-#autheticated.messagethread.form.label.users = Usuarios
-
-authenticated.messagethread.form.button.create = Crear
+autheticated.messagethread.form.noMoreUsersToRemove = No hay más usuarios que puedan ser borrados del hilo
+authenticated.messagethread.form.usersToRemove = Seleccione el usuario a eliminar
+autheticated.messagethread.form.button.deleteUser = Eliminar usuario
 autheticated.messagethread.form.button.return = Volver

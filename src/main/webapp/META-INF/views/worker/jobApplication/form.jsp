@@ -3,7 +3,7 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<acme:form>
+<acme:form readonly="true">
 <acme:form-integer code="worker.jobApplication.form.label.referenceNumber" path="referenceNumber"/>
 <jstl:if test="${command != 'create' }">
 <acme:form-moment code="worker.jobApplication.form.label.creationMoment" path="creationMoment" readonly="true"/>
@@ -37,14 +37,8 @@
 	action="/worker/job-application/create"/>
 	<acme:form-hidden path="idJob"/>
 	<acme:form-return code="worker.jobApplication.form.button.return"/>
+	
+	<acme:form-submit method = "get"  test="${command != 'create'}" code="worker.job.message.job" action="/worker/job/show?id=${job.id}"/>
 </acme:form>
 
-<jstl:if test="${command != 'create' }">
-<a href = /acme-jobs/worker/job/show?id=<jstl:out value="${job.id}"></jstl:out>>
-<acme:message code="worker.job.message.job"/>
-</a>
-</jstl:if>
 
-<acme:form>
-
-</acme:form>

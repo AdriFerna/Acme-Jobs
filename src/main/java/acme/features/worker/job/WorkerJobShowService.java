@@ -1,11 +1,13 @@
 
 package acme.features.worker.job;
 
+import java.util.Calendar;
+import java.util.TimeZone;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.jobs.Job;
-import acme.entities.roles.Employer;
 import acme.entities.roles.Worker;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -29,14 +31,9 @@ public class WorkerJobShowService implements AbstractShowService<Worker, Job> {
 		Job job;
 		jobId = request.getModel().getInteger("id");
 		job = this.repository.findOneById(jobId);
+		Calendar c = Calendar.getInstance(TimeZone.getDefault());
 
-		if (principal.hasRole(Employer.class)) {
-			Employer employer;
-			employer = job.getEmployer();
-			result = job.getStatus().equals("published") || !job.getStatus().equals("published") && employer.getUserAccount().getId() == principal.getAccountId();
-		} else {
-			result = job.getStatus().equals("published");
-		}
+		result = job.getStatus().equals("published") && job.getDeadline().after(c.getTime());
 		return result;
 	}
 

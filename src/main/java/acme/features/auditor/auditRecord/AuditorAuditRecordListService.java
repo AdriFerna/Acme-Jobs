@@ -8,40 +8,22 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.auditRecord.AuditRecord;
 import acme.entities.roles.Auditor;
-import acme.features.auditor.job.AuditorJobRepository;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 
 @Service
 public class AuditorAuditRecordListService implements AbstractListService<Auditor, AuditRecord> {
 
 	@Autowired
-	AuditorAuditRecordRepository	repository;
-
-	@Autowired
-	AuditorJobRepository			repositoryJOB;
+	AuditorAuditRecordRepository repository;
 
 
 	@Override
 	public boolean authorise(final Request<AuditRecord> request) {
 		assert request != null;
 
-		boolean result;
-		int auditRecordId;
-		AuditRecord audit;
-		Auditor auditor;
-		Principal principal;
-
-		auditRecordId = request.getModel().getInteger("idAudit");
-		audit = this.repository.findOneById(auditRecordId);
-
-		auditor = audit.getAuditor();
-		principal = request.getPrincipal();
-		result = audit.getStatus().equals("published") && auditor.getUserAccount().getId() == principal.getAccountId();
-
-		return result;
+		return true;
 	}
 
 	@Override
@@ -49,7 +31,7 @@ public class AuditorAuditRecordListService implements AbstractListService<Audito
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "title", "body", "job.title", "job.id");
+		request.unbind(entity, model, "title", "status", "job.referenceNumber");
 
 	}
 
@@ -59,7 +41,7 @@ public class AuditorAuditRecordListService implements AbstractListService<Audito
 
 		Collection<AuditRecord> result;
 
-		result = this.repository.findAuditPublished();
+		result = this.repository.findMyAuditRecords(request.getPrincipal().getActiveRoleId());
 
 		return result;
 	}
